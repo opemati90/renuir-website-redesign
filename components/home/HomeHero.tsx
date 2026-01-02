@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/form";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { CheckCircleIcon, Mail, ArrowRight, Sparkles } from "lucide-react";
@@ -189,14 +188,11 @@ const HomeHero = () => {
             className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center min-h-[400px] lg:min-h-[600px]"
           >
             <div className="relative w-full h-full flex items-center justify-center">
-              <Image
+              <img
                 src="/images/hero-img.png"
                 alt="Renuir platform illustration"
-                width={1173}
-                height={2397}
-                priority
                 className="w-full h-auto max-w-full object-contain"
-                style={{ maxWidth: '100%', height: 'auto' }}
+                style={{ maxWidth: '100%', height: 'auto', aspectRatio: '1173/2397' }}
               />
             </div>
           </motion.div>
