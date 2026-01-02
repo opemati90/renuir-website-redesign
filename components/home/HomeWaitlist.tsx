@@ -33,7 +33,9 @@ export const EarlyAccessSection = () => {
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log("Waitlist email:", values.email);
+    const subject = encodeURIComponent("Waitlist Request - Early Access");
+    const body = encodeURIComponent(`Hi Renuir team,\n\nI'd like to join the waitlist for early access.\n\nMy email: ${values.email}\n\nThank you!`);
+    window.location.href = `mailto:info@renuir.com?subject=${subject}&body=${body}`;
   };
 
   const ref = useRef(null);
