@@ -17,7 +17,7 @@ export const FAQSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" className="bg-white py-24 md:py-32">
+    <section id="faq" className="bg-white py-16 md:py-20">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -81,20 +81,33 @@ export const FAQSection = () => {
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
           variants={fadeIn("up", "tween", 0.6, 0.5)}
-          className="text-center mt-20 p-10 bg-gray-900 rounded-[2.5rem] text-white space-y-6 shadow-2xl"
+          className="mt-20 p-8 md:p-12 bg-gray-900 rounded-[2.5rem] text-white shadow-2xl overflow-hidden relative"
         >
-          <Typography variant="h3" className="text-2xl md:text-3xl font-black tracking-tight">
-            Still have questions?
-          </Typography>
-          <p className="text-gray-400 text-lg">We&apos;re here to help you with anything you need.</p>
-          <div className="pt-2">
-            <a
-              href="mailto:info@renuir.com"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-white text-gray-900 font-black text-lg hover:bg-gray-100 transition-all active:scale-[0.98]"
-            >
-              Get in touch
-              <ArrowRight className="h-5 w-5" />
-            </a>
+          {/* Decorative background element */}
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+            <div className="flex-1 text-center md:text-left space-y-4">
+              <Typography variant="h3" className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+                More than just an automated platform.
+              </Typography>
+              <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
+                Our dedicated support team is here to ensure every lost item has the best chance of finding its way back home.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center md:items-end gap-4 min-w-fit">
+              <a
+                href="mailto:info@renuir.com"
+                className="inline-flex items-center gap-2.5 px-10 py-5 rounded-2xl bg-white text-gray-900 font-black text-xl hover:bg-gray-100 transition-all active:scale-[0.98] shadow-lg"
+              >
+                Get in touch
+                <ArrowRight className="h-6 w-6" />
+              </a>
+              <p className="text-gray-500 text-sm font-bold uppercase tracking-widest">
+                Response within 24 hours
+              </p>
+            </div>
           </div>
         </motion.div>
       </motion.div>

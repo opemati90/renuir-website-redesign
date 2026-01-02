@@ -39,7 +39,7 @@ const HomeHero = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   return (
-    <section className="bg-white pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
+    <section className="bg-white pt-12 md:pt-16 pb-12 md:pb-16 overflow-hidden">
       <div ref={containerRef} className="app-container">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           {/* Left Content */}

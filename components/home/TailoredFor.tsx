@@ -17,7 +17,7 @@ export const TailoredForEveryone = () => {
   const features = audience === "business" ? businessFeaturesData : consumerFeaturesData;
 
   return (
-    <section className="app-container py-24 md:py-32" id="features">
+    <section className="app-container py-16 md:py-20" id="features">
       <motion.div
         ref={ref}
         initial="hidden"
