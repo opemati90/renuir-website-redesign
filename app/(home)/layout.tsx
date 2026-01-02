@@ -2,6 +2,7 @@ import Nav from "@/components/navbar/Nav";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import { Footer } from "@/components/shared/Footer";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
+import { FloatingWaitlist } from "@/components/shared/FloatingWaitlist";
 
 export default function WebsiteLayout({
   children,
@@ -19,6 +20,7 @@ export default function WebsiteLayout({
       <Footer />
       <ScrollToTop />
       <CookieConsent />
+      <FloatingWaitlist />
     </main>
   );
 }

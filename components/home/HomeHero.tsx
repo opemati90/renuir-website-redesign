@@ -39,25 +39,24 @@ const HomeHero = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
 
   return (
-    <section className="bg-gradient-to-b from-white via-gray-50/30 to-white pt-24 md:pt-32 pb-24 md:pb-32">
+    <section className="bg-white pt-24 md:pt-32 pb-20 md:pb-24">
       <div ref={containerRef} className="app-container">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
-            variants={fadeIn("up", "tween", 0.2, 0.6)}
-            className="flex-1 space-y-8"
+            variants={fadeIn("up", "tween", 0.2, 0.5)}
+            className="flex-1 space-y-6"
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100"
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200"
             >
-              <div className="h-2 w-2 rounded-full bg-primary-600 animate-pulse" />
-              <span className="text-sm font-medium text-primary-700">
+              <span className="text-sm font-medium text-gray-700">
                 Join the waitlist
               </span>
             </motion.div>
@@ -66,12 +65,12 @@ const HomeHero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="space-y-3"
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="space-y-2"
             >
               <Typography
                 variant="h1"
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
               >
                 Lost it?
                 <br />
@@ -83,11 +82,11 @@ const HomeHero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
             >
               <Typography
                 variant="h4"
-                className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-xl"
+                className="text-lg text-gray-600 leading-relaxed max-w-xl"
               >
                 The lost & found platform that actually works. Report once, and
                 we&apos;ll search everywhere for you in real time.
@@ -98,7 +97,7 @@ const HomeHero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
               className="pt-2"
             >
               <Form {...form}>
@@ -117,7 +116,7 @@ const HomeHero = () => {
                             <Input
                               {...field}
                               placeholder="Enter your email"
-                              className="pl-12 h-14 text-base rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-0"
+                              className="pl-12 h-12 text-base rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
                             />
                           </div>
                         </FormControl>
@@ -129,7 +128,7 @@ const HomeHero = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="h-14 px-8 font-semibold rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/20 hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-200"
+                    className="h-12 px-6 font-semibold rounded-lg bg-primary-600 hover:bg-primary-700 text-white"
                   >
                     Join waitlist
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -142,25 +141,19 @@ const HomeHero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-wrap items-center gap-6 pt-4"
+              transition={{ delay: 0.5, duration: 0.5 }}
+              className="flex flex-wrap items-center gap-6 pt-2"
             >
               <div className="flex items-center gap-2">
                 <CheckCircleIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-                <Typography variant="smallText" className="text-gray-700 font-medium">
+                <Typography variant="smallText" className="text-gray-700">
                   Smart matching
                 </Typography>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircleIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-                <Typography variant="smallText" className="text-gray-700 font-medium">
+                <Typography variant="smallText" className="text-gray-700">
                   Free for individuals
-                </Typography>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-                <Typography variant="smallText" className="text-gray-700 font-medium">
-                  Real-time search
                 </Typography>
               </div>
             </motion.div>
@@ -169,34 +162,31 @@ const HomeHero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
               className="pt-2"
             >
               <Link
                 href="#how-it-works"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors group"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
               >
                 Learn how it works
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right Image */}
+          {/* Right Image - Simple, no effects */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
             className="flex-1 w-full lg:w-auto"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-100/20 to-primary-200/10 rounded-3xl blur-3xl" />
-              <img
-                src="/images/hero.png"
-                alt="Renuir platform illustration"
-                className="relative w-full max-w-2xl mx-auto rounded-2xl shadow-2xl"
-              />
-            </div>
+            <img
+              src="/images/hero.png"
+              alt="Renuir platform illustration"
+              className="w-full max-w-2xl mx-auto"
+            />
           </motion.div>
         </div>
       </div>

@@ -122,7 +122,7 @@ export const trustedByStats = [
   },
 ];
 
-export const features = [
+export const businessFeatures = [
   {
     icon: Zap,
     title: "Log items in seconds",
@@ -148,3 +148,32 @@ export const features = [
       "Verify the owner's identity before returning anything. Simple pickup or shipping options built in.",
   },
 ];
+
+export const consumerFeatures = [
+  {
+    icon: Smartphone,
+    title: "Report once, search everywhere",
+    description:
+      "Fill out one form. We check airports, hotels, transit, and more. You don't have to.",
+  },
+  {
+    icon: Sparkle,
+    title: "Get notified when it's found",
+    description:
+      "The moment there's a potential match, you'll know. No more checking back every day.",
+  },
+  {
+    icon: Shield,
+    title: "Photos help us find it faster",
+    description:
+      "Got a picture of your bag or laptop? Upload it. It makes matching way more accurate.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Your info stays private",
+    description:
+      "We don't share your details until there's a confirmed match and you say it's okay.",
+  },
+];
+
+export const features = businessFeatures;
