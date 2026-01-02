@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/form";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { CheckCircleIcon, Mail, ArrowRight, Sparkles } from "lucide-react";
@@ -41,13 +42,13 @@ const HomeHero = () => {
   return (
     <section className="bg-white pt-20 md:pt-28 pb-16 md:pb-24">
       <div ref={containerRef} className="app-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0, 0.6)}
-            className="space-y-8"
+            className="flex-1 lg:flex-[0.45] space-y-8"
           >
             {/* Badge */}
             <motion.div
@@ -185,14 +186,17 @@ const HomeHero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex items-center justify-center w-full lg:w-auto"
+            className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center min-h-[400px] lg:min-h-[600px]"
           >
-            <div className="relative w-full max-w-lg mx-auto">
-              <img
-                src="/images/hero-img.png"
+            <div className="relative w-full h-full flex items-center justify-center">
+              <Image
+                src="/images/hero.png"
                 alt="Renuir platform illustration"
-                className="w-full h-auto object-contain"
-                style={{ aspectRatio: '1173/2397' }}
+                width={1090}
+                height={1500}
+                priority
+                className="w-full h-auto max-w-full object-contain"
+                style={{ maxWidth: '100%', height: 'auto' }}
               />
             </div>
           </motion.div>
