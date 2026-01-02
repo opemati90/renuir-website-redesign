@@ -2,9 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  // Disable Turbopack to avoid build errors on Vercel
-  experimental: {
-    turbo: false,
+  // Ensure webpack is used instead of Turbopack to avoid build errors
+  webpack: (config, { isServer }) => {
+    return config;
   },
 };
 
