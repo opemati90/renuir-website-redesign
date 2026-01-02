@@ -37,7 +37,7 @@ const MobileNav = () => {
         <SheetContent side="top" className="w-full">
           <SheetHeader className="text-left">
             <SheetTitle className="mt-6 mb-8 flex flex-wrap justify-end">
-              <Link href="#waitlist">
+                <Link href="/#waitlist">
                 <Button variant="outline" size="sm">Join waitlist</Button>
               </Link>
             </SheetTitle>

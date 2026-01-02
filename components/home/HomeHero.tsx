@@ -166,7 +166,7 @@ const HomeHero = () => {
               className="pt-2"
             >
               <Link
-                href="#how-it-works"
+                href="/#how-it-works"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
               >
                 Learn how it works
@@ -183,7 +183,7 @@ const HomeHero = () => {
             className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center"
           >
             <img
-              src="/images/Hero-img.png"
+              src="/images/hero-img.png"
               alt="Renuir platform illustration"
               className="w-full h-auto object-contain"
               style={{ aspectRatio: '4578/3433', maxWidth: '100%' }}

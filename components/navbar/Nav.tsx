@@ -44,7 +44,7 @@ const Nav = () => {
               </Link>
             </div>
           ))}
-          <Link href="#waitlist" className="hidden lg:block">
+          <Link href="/#waitlist" className="hidden lg:block">
             <Button variant="default" className="rounded-lg font-semibold shadow-sm hover:shadow-md transition-shadow">
               Join waitlist
             </Button>

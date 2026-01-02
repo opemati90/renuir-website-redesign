@@ -63,16 +63,16 @@ export const Footer = () => {
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="#features" className="hover:text-white transition-colors">Features</Link>
+                <Link href="/#features" className="hover:text-white transition-colors">Features</Link>
               </li>
               <li>
-                <Link href="#how-it-works" className="hover:text-white transition-colors">How it Works</Link>
+                <Link href="/#how-it-works" className="hover:text-white transition-colors">How it Works</Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-white transition-colors">About</Link>
+                <Link href="/#about" className="hover:text-white transition-colors">About</Link>
               </li>
               <li>
-                <Link href="#waitlist" className="hover:text-white transition-colors">Join Waitlist</Link>
+                <Link href="/#waitlist" className="hover:text-white transition-colors">Join Waitlist</Link>
               </li>
             </ul>
           </div>
@@ -84,7 +84,7 @@ export const Footer = () => {
                 <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
               </li>
               <li>
-                <Link href="mailto:info@renuir.com" className="hover:text-white transition-colors">Contact Support</Link>
+                <a href="mailto:info@renuir.com" className="hover:text-white transition-colors">Contact Support</a>
               </li>
               <li>
                 <Link href="/safety" className="hover:text-white transition-colors">Safety Tips</Link>
