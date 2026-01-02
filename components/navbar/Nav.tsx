@@ -16,8 +16,8 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white fixed w-full z-50 border-b border-gray-200">
-      <div className="app-container flex justify-between items-center py-2">
+    <nav className="bg-white/95 backdrop-blur-sm fixed w-full z-50 border-b border-gray-200 shadow-sm">
+      <div className="app-container flex justify-between items-center py-3 md:py-4">
         <Link href="/">
           <Image
             src={Logo}
@@ -45,7 +45,9 @@ const Nav = () => {
             </div>
           ))}
           <Link href="#waitlist" className="hidden lg:block">
-            <Button variant="default">Join waitlist</Button>
+            <Button variant="default" className="rounded-lg font-semibold shadow-sm hover:shadow-md transition-shadow">
+              Join waitlist
+            </Button>
           </Link>
         </div>
 

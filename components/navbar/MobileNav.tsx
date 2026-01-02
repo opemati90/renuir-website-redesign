@@ -29,8 +29,8 @@ const MobileNav = () => {
     <section className="lg:hidden">
       <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
         <SheetTrigger asChild>
-          <button aria-label="Open menu">
-            <Menu size={28} className="text-foreground" />
+          <button aria-label="Open menu" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <Menu size={24} className="text-gray-700" />
           </button>
         </SheetTrigger>
 

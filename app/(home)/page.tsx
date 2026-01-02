@@ -8,18 +8,18 @@ import { TailoredForEveryone } from "@/components/home/TailoredFor";
 import { TrustedByStats } from "@/components/home/TrustedBy";
 
 const SECTIONS = [
-  { Component: HomeHero, className: "mt-48" },
-  { Component: TrustedByStats, className: "mt-12" },
-  { Component: TailoredForEveryone, className: "mt-24" },
-  { Component: LostSomething, className: "mt-24" },
+  { Component: HomeHero, className: "" },
+  { Component: TrustedByStats, className: "" },
+  { Component: TailoredForEveryone, className: "" },
+  { Component: LostSomething, className: "" },
   { Component: HomeQuote, className: "" },
-  { Component: FAQSection, className: "mt-12" },
-  { Component: EarlyAccessSection, className: "mt-24" },
+  { Component: FAQSection, className: "" },
+  { Component: EarlyAccessSection, className: "" },
 ];
 
 export default function Home() {
   return (
-    <main className=" overflow-hidden">
+    <main className="overflow-hidden">
       {SECTIONS.map(({ Component, className }, index) => (
         <section key={index} className={className}>
           <Component />

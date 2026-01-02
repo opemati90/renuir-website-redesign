@@ -1,24 +1,48 @@
+"use client";
 import { Typography } from "../ui/typography";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { fadeIn } from "../Variants";
 
 const HomeQuote = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <section className="bg-gray-50" id="about">
-      <div className="app-container py-24">
-        <div className="flex flex-col items-center justify-center">
-          <Typography variant="h2" className="font-semibold text-center">
+    <section className="bg-gradient-to-b from-white via-gray-50 to-white py-20 md:py-32" id="about">
+      <div ref={ref} className="app-container">
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+          variants={fadeIn("up", "tween", 0, 0.6)}
+          className="flex flex-col items-center justify-center max-w-4xl mx-auto"
+        >
+          <Typography variant="h2" className="font-bold text-center text-gray-900 text-3xl md:text-4xl mb-12">
             Why we&apos;re building this
           </Typography>
 
-          <div className="font-normal max-w-3xl mt-8 text-center">
-            <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed mb-4">
-              We&apos;ve all been there. That sinking feeling when you realize your bag is gone. Then comes the worst part: calling every place you visited, repeating the same description, hoping someone picked it up.
-            </Typography>
+          <div className="space-y-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
+              <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed text-lg md:text-xl">
+                We&apos;ve all been there. That sinking feeling when you realize your bag is gone. Then comes the worst part: calling every place you visited, repeating the same description, hoping someone picked it up.
+              </Typography>
+            </motion.div>
 
-            <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed">
-              We&apos;re building Renuir because that process is broken. One report should be enough. We want to make it easy to get your stuff back, and easy for good people to return what they find.
-            </Typography>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed text-lg md:text-xl">
+                We&apos;re building Renuir because that process is broken. One report should be enough. We want to make it easy to get your stuff back, and easy for good people to return what they find.
+              </Typography>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
