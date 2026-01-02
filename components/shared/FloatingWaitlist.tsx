@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, ArrowRight } from "lucide-react";
+import { X, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export const FloatingWaitlist = () => {
 
     // Show after scrolling past hero section
     const handleScroll = () => {
-      if (window.scrollY > 600 && !isDismissed) {
+      if (window.scrollY > 800 && !isDismissed) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -39,35 +39,37 @@ export const FloatingWaitlist = () => {
   if (!isVisible || isDismissed) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 p-4 animate-slide-up">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-primary-600 rounded-xl shadow-2xl px-6 py-4 flex items-center justify-between gap-4">
-          <p className="text-white font-medium text-base md:text-lg">
-            Ready to join the waitlist?
-          </p>
-          
-          <div className="flex items-center gap-3">
-            <Link href="/#waitlist">
-              <Button
-                size="sm"
-                className="bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg px-6 h-10"
-              >
-                Join Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            
-            <button
-              onClick={handleDismiss}
-              className="text-white/80 hover:text-white transition-colors p-1 rounded-lg hover:bg-white/10"
-              aria-label="Close"
-            >
-              <X className="h-5 w-5" />
-            </button>
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 px-4 w-full max-w-2xl animate-slide-up">
+      <div className="bg-gray-900 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] px-6 py-4 flex items-center justify-between gap-6 border border-white/10 ring-1 ring-white/5">
+        <div className="flex items-center gap-3">
+          <div className="flex items-center justify-center h-10 w-10 rounded-full bg-primary-600 shadow-lg shadow-primary-600/20">
+            <Sparkles className="h-5 w-5 text-white" />
           </div>
+          <p className="text-white font-bold text-base md:text-lg tracking-tightest">
+            Don&apos;t miss early access
+          </p>
+        </div>
+        
+        <div className="flex items-center gap-4">
+          <Link href="/#waitlist">
+            <Button
+              size="lg"
+              className="bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl px-8 h-12 shadow-xl shadow-primary-600/20 active:translate-y-0.5 transition-all"
+            >
+              Join the List
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          
+          <button
+            onClick={handleDismiss}
+            className="text-white/40 hover:text-white transition-colors p-2 rounded-xl hover:bg-white/10"
+            aria-label="Dismiss"
+          >
+            <X className="h-6 w-6" />
+          </button>
         </div>
       </div>
     </div>
   );
 };
-
