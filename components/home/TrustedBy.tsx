@@ -29,15 +29,15 @@ export const TrustedByStats = () => {
 
               <div className="text-center">
                 <Typography variant="h3" className="font-black text-gray-900 text-2xl tracking-tight">
-                  {stat.value}
-                </Typography>
+                {stat.value}
+              </Typography>
 
-                <Typography
+              <Typography
                   variant="smallText"
                   className="text-gray-500 text-sm font-bold uppercase tracking-wider mt-1"
-                >
-                  {stat.label}
-                </Typography>
+              >
+                {stat.label}
+              </Typography>
               </div>
             </motion.div>
           ))}

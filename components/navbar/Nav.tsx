@@ -28,18 +28,18 @@ const Nav = () => {
 
         <div className="hidden lg:flex items-center space-x-2">
           {menuItems.map((item, index) => (
-            <Link
+              <Link
               key={index}
-              href={item.href}
-              className={clsx(
+                href={item.href}
+                className={clsx(
                 "px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200",
-                pathname === item.href || pathname.startsWith(item.href + "/")
+                  pathname === item.href || pathname.startsWith(item.href + "/")
                   ? "text-primary-600 bg-primary-50"
                   : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-              )}
-            >
-              {item.name}
-            </Link>
+                )}
+              >
+                {item.name}
+              </Link>
           ))}
           
           <div className="w-px h-6 bg-gray-200 mx-4" />

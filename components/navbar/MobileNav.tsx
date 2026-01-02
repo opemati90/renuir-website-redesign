@@ -47,7 +47,7 @@ const MobileNav = () => {
                 <X className="h-6 w-6 text-gray-500" />
               </Button>
             </div>
-            
+
             <nav className="flex-1 px-4 py-8">
               <div className="space-y-2">
                 {menuItems.map((item, index) => (
@@ -55,17 +55,17 @@ const MobileNav = () => {
                     key={index}
                     href={item.href}
                     onClick={() => setSheetOpen(false)}
-                    className={clsx(
+                      className={clsx(
                       "flex items-center px-4 py-4 rounded-xl text-lg font-bold transition-colors",
                       pathname === item.href
                         ? "bg-primary-50 text-primary-600"
                         : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                    )}
-                  >
-                    {item.name}
+                      )}
+                    >
+                      {item.name}
                   </Link>
                 ))}
-              </div>
+                </div>
             </nav>
 
             <div className="p-6 border-t border-gray-50">
