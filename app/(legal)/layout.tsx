@@ -21,22 +21,22 @@ export default function LegalLayout({ children }: LegalLayoutProps) {
   };
 
   return (
-    <div className=" bg-white min-h-screen">
+    <div className="bg-white min-h-screen flex flex-col">
       <Nav />
-      <div className="pt-24 md:pt-48 pb-24 app-container mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="flex-1 pt-24 md:pt-32 pb-24 app-container">
         {children}
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <Button
             variant="link"
             onClick={handleBack}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </Button>
         </div>
-      </div>
+      </main>
       <Footer />
       <ScrollToTop />
     </div>

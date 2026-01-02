@@ -77,7 +77,7 @@ export const Footer = () => {
                 <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
               </li>
               <li>
-                <a href="mailto:info@renuir.com" className="hover:text-white transition-colors text-primary-400">Contact Support</a>
+                <a href="mailto:info@renuir.com" className="hover:text-white transition-colors">Contact Support</a>
               </li>
               <li>
                 <Link href="/safety" className="hover:text-white transition-colors">Safety Tips</Link>

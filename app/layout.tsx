@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Renuir",
+  title: "Renuir - Lost & Found That Actually Works",
   description:
-    "The AI-powered lost & found that actually works. Report once, and we'll search everywhere for you in real time.",
+    "The modern lost & found platform. Report once, and we'll search everywhere for you in real time. Reuniting people with their belongings.",
 };
 
 export default function RootLayout({

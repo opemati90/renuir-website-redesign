@@ -10,17 +10,13 @@ export default function WebsiteLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main>
-      <div className="">
-        <Nav />
-
-        <main>{children}</main>
-      </div>
-
+    <div className="min-h-screen flex flex-col">
+      <Nav />
+      <main className="flex-1">{children}</main>
       <Footer />
       <ScrollToTop />
       <CookieConsent />
       <FloatingWaitlist />
-    </main>
+    </div>
   );
 }

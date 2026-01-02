@@ -44,7 +44,7 @@ export const times = [
   {
     icon: Shield,
     value: "100%",
-    label: "Seucre Verification",
+    label: "Secure Verification",
   },
   {
     icon: Clock1,
@@ -200,5 +200,3 @@ export const consumerFeatures = [
       "We don't share your details until there's a confirmed match and you say it's okay.",
   },
 ];
-
-export const features = businessFeatures;
