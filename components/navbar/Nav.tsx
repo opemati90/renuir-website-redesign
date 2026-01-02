@@ -16,42 +16,42 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm fixed w-full z-50 border-b border-gray-200 shadow-sm">
-      <div className="app-container flex justify-between items-center py-3 md:py-4">
-        <Link href="/">
+    <nav className="bg-white fixed w-full z-50 border-b border-gray-100 shadow-sm">
+      <div className="app-container flex justify-between items-center py-4">
+        <Link href="/" className="flex items-center">
           <Image
             src={Logo}
             alt="Renuir Logo"
             width={90}
-            height={90}
-            className="w-[70px] sm:w-[90px] h-auto"
+            height={32}
+            className="w-[80px] sm:w-[90px] h-auto"
+            priority
           />
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-2">
           {menuItems.map((item, index) => (
-            <div key={index} className="relative group">
-              <Link
-                href={item.href}
-                className={clsx(
-                  pathname === item.href || pathname.startsWith(item.href + "/")
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary-700",
-                  "px-4 font-semibold"
-                )}
-              >
-                {item.name}
-              </Link>
-            </div>
+            <Link
+              key={index}
+              href={item.href}
+              className={clsx(
+                pathname === item.href || (pathname === "/" && item.href.startsWith("/#"))
+                  ? "text-primary-600"
+                  : "text-gray-600 hover:text-gray-900",
+                "px-4 py-2 text-sm font-semibold transition-colors"
+              )}
+            >
+              {item.name}
+            </Link>
           ))}
-          <Link href="/#waitlist" className="hidden lg:block">
-            <Button variant="default" className="rounded-lg font-semibold shadow-sm hover:shadow-md transition-shadow">
-              Join waitlist
-            </Button>
-          </Link>
+          <div className="pl-4">
+            <Link href="/#waitlist">
+              <Button size="sm" className="rounded-lg font-bold px-5 bg-primary-600 hover:bg-primary-700 text-white shadow-sm transition-all">
+                Join waitlist
+              </Button>
+            </Link>
+          </div>
         </div>
-
-        {/* Button */}
 
         <MobileNav />
       </div>

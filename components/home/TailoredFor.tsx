@@ -9,14 +9,14 @@ import { useRef } from "react";
 import { fadeIn } from "../Variants";
 
 export const TailoredForEveryone = () => {
-  const [audience, setAudience] = useState<"business" | "consumer">("business");
+  const [audience, setAudience] = useState<"business" | "consumer">("consumer");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const features = audience === "business" ? businessFeatures : consumerFeatures;
 
   return (
-    <section className="app-container py-20 md:py-28" id="features">
+    <section className="app-container py-24 md:py-32" id="features">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -24,63 +24,58 @@ export const TailoredForEveryone = () => {
         variants={fadeIn("up", "tween", 0, 0.5)}
         className="text-center max-w-3xl mx-auto"
       >
-        <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl">
+        <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-5xl tracking-tight">
           Built for how you actually use it
         </Typography>
 
         <Typography
           variant="h4"
-          className="text-gray-600 font-normal mt-4 text-lg leading-relaxed"
+          className="text-gray-500 font-medium mt-6 text-lg md:text-xl leading-relaxed"
         >
           Different needs, same goal: getting stuff back to its owner, fast.
         </Typography>
 
         {/* Toggle */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
-          className="inline-flex mt-8 rounded-lg border border-gray-200 bg-gray-50 p-1"
-        >
+        <div className="inline-flex mt-10 rounded-xl bg-gray-100 p-1.5 ring-1 ring-gray-200">
           <Button
-            size="sm"
+            size="lg"
+            variant={audience === "consumer" ? "default" : "ghost"}
+            className={audience === "consumer" ? "rounded-lg font-bold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-lg font-bold text-gray-500 hover:text-gray-900"}
+            onClick={() => setAudience("consumer")}
+          >
+            For Individuals
+          </Button>
+          <Button
+            size="lg"
             variant={audience === "business" ? "default" : "ghost"}
-            className="rounded-md px-5"
+            className={audience === "business" ? "rounded-lg font-bold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-lg font-bold text-gray-500 hover:text-gray-900"}
             onClick={() => setAudience("business")}
           >
             For Business
           </Button>
-          <Button
-            size="sm"
-            variant={audience === "consumer" ? "default" : "ghost"}
-            className="rounded-md px-5"
-            onClick={() => setAudience("consumer")}
-          >
-            For Consumers
-          </Button>
-        </motion.div>
+        </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
         {features.map((feature, index) => (
           <motion.div
             key={index}
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0.2 + index * 0.1, 0.4)}
-            className="p-8 border border-gray-200 rounded-2xl bg-white hover:border-primary-200 hover:shadow-lg transition-all duration-300"
+            className="p-8 border border-gray-100 rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-gray-200 transition-all duration-300"
           >
-            <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-primary-100/50 ring-1 ring-primary-100">
-              <feature.icon className="h-7 w-7 text-primary-600" />
+            <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-primary-50 text-primary-600 mb-6">
+              <feature.icon className="h-7 w-7" />
             </div>
 
-            <Typography variant="h5" className="font-bold mt-6 mb-3 text-gray-900 text-lg">
+            <Typography variant="h4" className="font-bold mb-3 text-gray-900 text-xl">
               {feature.title}
             </Typography>
 
             <Typography
               variant="smallText"
-              className="text-gray-600 text-base leading-relaxed"
+              className="text-gray-500 text-base leading-relaxed font-medium"
             >
               {feature.description}
             </Typography>

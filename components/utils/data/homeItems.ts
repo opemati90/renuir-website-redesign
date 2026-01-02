@@ -24,7 +24,7 @@ export const Loststat = [
     icon: Sparkle,
 
     value: "We search",
-    label: "Smart matching in real time",
+    label: "AI checks and matches in real time",
     bg: "bg-white",
     iconColor: "text-primary-600",
     order: "2",
@@ -92,7 +92,7 @@ export const faqs: FAQItem[] = [
   {
     question: "How do you verify that a match is actually my item?",
     answer:
-      "Our matching system uses smart algorithms to compare descriptions, photos, and location data. When a potential match is found, you'll see photos and details from the venue. You can verify distinctive features, serial numbers, or other identifying marks before confirming. We also require venues to verify ownership through security questions or documentation before releasing items.",
+      "Our matching system uses AI to compare descriptions, photos, and location data. When a potential match is found, you'll see photos and details from the venue. You can verify distinctive features, serial numbers, or other identifying marks before confirming. We also require venues to verify ownership through security questions or documentation before releasing items.",
   },
   {
     question: "What if my item is never found?",

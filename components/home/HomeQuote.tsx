@@ -12,7 +12,7 @@ const HomeQuote = () => {
   return (
     <section className="bg-white py-24 md:py-32" id="about">
       <div ref={ref} className="app-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
           <motion.div
             initial="hidden"
@@ -20,7 +20,7 @@ const HomeQuote = () => {
             variants={fadeIn("right", "tween", 0, 0.6)}
             className="order-2 lg:order-1"
           >
-            <div className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-xl ring-1 ring-gray-200/50">
+            <div className="relative w-full aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl shadow-gray-200 ring-1 ring-gray-100">
               <Image
                 src="/images/Building.png"
                 alt="Why we're building Renuir"
@@ -37,20 +37,20 @@ const HomeQuote = () => {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("left", "tween", 0.2, 0.6)}
-            className="order-1 lg:order-2 space-y-8"
+            className="order-1 lg:order-2 space-y-10"
           >
             <div className="space-y-4">
-              <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight">
+              <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tightest">
                 Why we&apos;re building this
               </Typography>
             </div>
 
-            <div className="space-y-6">
-              <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed text-lg md:text-xl">
+            <div className="space-y-8">
+              <Typography variant="h4" className="font-medium text-gray-500 leading-relaxed text-lg md:text-2xl">
                 We&apos;ve all been there. That sinking feeling when you realize your bag is gone. Then comes the worst part: calling every place you visited, repeating the same description, hoping someone picked it up.
               </Typography>
 
-              <Typography variant="h4" className="font-normal text-gray-700 leading-relaxed text-lg md:text-xl">
+              <Typography variant="h4" className="font-bold text-gray-900 leading-relaxed text-lg md:text-2xl">
                 We&apos;re building Renuir because that process is broken. One report should be enough. We want to make it easy to get your stuff back, and easy for good people to return what they find.
               </Typography>
             </div>

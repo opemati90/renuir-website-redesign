@@ -1,10 +1,9 @@
 import { Typography } from "@/components/ui/typography";
-
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Safety Tips | Renuir",
-  description: "Safety guidelines for using Renuir's lost and found platform",
+  description: "Safety guidelines for meeting and returning lost items",
 };
 
 export default function SafetyPage() {
@@ -15,185 +14,53 @@ export default function SafetyPage() {
           Safety Tips
         </Typography>
         <Typography variant="lead" className="text-gray-600">
-          Last updated: January 2025
+          Your safety is our priority. Please follow these guidelines when using Renuir.
         </Typography>
       </div>
 
-      <div className="prose prose-gray max-w-none space-y-8">
-
+      <div className="prose prose-gray max-w-none space-y-10">
         <section className="space-y-4">
-          <p className="text-gray-700 leading-relaxed text-lg">
-            At Renuir, your safety is our top priority. Whether you&apos;re
-            reporting a lost item, claiming a found item, or meeting someone to
-            retrieve your belongings, following these safety guidelines will help
-            ensure a positive experience.
+          <h3 className="text-2xl font-semibold text-gray-900">1. Meeting in Person</h3>
+          <p className="text-gray-700 leading-relaxed">
+            If you've found an item and are coordinating a return directly with the owner, please keep these safety tips in mind:
           </p>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            For Item Owners (Lost Items)
-          </h3>
-
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              Verifying Your Identity
-            </h4>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>
-                Be prepared to provide specific details about your item that only the
-                true owner would know
-              </li>
-              <li>Have proof of purchase or photos of the item if available</li>
-              <li>
-                Use the secure messaging system within Renuir rather than sharing
-                personal contact information immediately
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              Meeting to Retrieve Items
-            </h4>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>
-                Always meet in public, well-lit locations with security cameras if
-                possible
-              </li>
-              <li>
-                Consider meeting at a police station, library, or shopping center
-              </li>
-              <li>Bring a friend or family member with you</li>
-              <li>Inform someone you trust about where you&apos;re going and when</li>
-              <li>Meet during daylight hours when possible</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            For Finders (Found Items)
-          </h3>
-
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              Reporting Found Items
-            </h4>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>Take clear photos of the item from multiple angles</li>
-              <li>Note the exact location and time you found the item</li>
-              <li>
-                Keep the item in a safe place until it&apos;s returned to its owner
-              </li>
-              <li>
-                Do not share identifying details publicly that could allow fraudulent
-                claims
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">
-              Verifying Claimants
-            </h4>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700">
-              <li>
-                Ask specific questions about the item that only the true owner would
-                know
-              </li>
-              <li>Request proof of ownership when appropriate</li>
-              <li>
-                Use Renuir&apos;s verification features to confirm the claimant&apos;s
-                identity
-              </li>
-              <li>
-                Trust your instincts. If something feels wrong, don&apos;t proceed
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            For Businesses Using Renuir
-          </h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li>Establish a dedicated secure area for storing found items</li>
-            <li>Train staff on proper verification procedures</li>
-            <li>Keep detailed records of all lost and found transactions</li>
-            <li>
-              Use Renuir&apos;s business dashboard to track item custody chain
-            </li>
-            <li>
-              Follow your organization&apos;s policies for handling lost property
-            </li>
+          <ul className="list-disc pl-6 space-y-3 text-gray-700 font-medium">
+            <li><strong>Meet in a Public Place:</strong> Always choose a well-lit, high-traffic public area for the meeting, such as a coffee shop, police station lobby, or a busy mall.</li>
+            <li><strong>Don't Go Alone:</strong> If possible, bring a friend or family member with you to the meeting.</li>
+            <li><strong>Share Your Plans:</strong> Let someone know where you are going, who you are meeting, and when you expect to be back.</li>
+            <li><strong>Stay Alert:</strong> Trust your instincts. If something feels wrong, don't hesitate to cancel the meeting or leave.</li>
           </ul>
         </section>
 
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            Protecting Your Personal Information
-          </h3>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li>
-              Never share sensitive personal information (SSN, bank details,
-              passwords)
-            </li>
-            <li>Be cautious of requests for payment before receiving your item</li>
-            <li>Report suspicious behavior to Renuir immediately</li>
-            <li>Use strong, unique passwords for your Renuir account</li>
-            <li>Enable two-factor authentication when available</li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            Recognizing Scams
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-3">Be aware of these common warning signs:</p>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li>
-              Requests for upfront payment or &quot;shipping fees&quot; before
-              return
-            </li>
-            <li>Pressure to act quickly or urgently</li>
-            <li>Unwillingness to meet in safe, public locations</li>
-            <li>
-              Vague descriptions of the item that don&apos;t match your lost
-              property
-            </li>
-            <li>Requests to communicate outside of the Renuir platform</li>
-          </ul>
-        </section>
-
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold text-gray-900">
-            Reporting Concerns
-          </h3>
-          <p className="text-gray-700 leading-relaxed mb-3">
-            If you encounter suspicious activity or feel unsafe at any point,
-            please:
+        <section className="space-y-4 border-t border-gray-100 pt-10">
+          <h3 className="text-2xl font-semibold text-gray-900">2. Verification</h3>
+          <p className="text-gray-700 leading-relaxed">
+            Before meeting or sending an item, always use our platform to verify ownership:
           </p>
-          <ul className="list-disc pl-6 space-y-2 text-gray-700">
-            <li>
-              Report the user or listing through Renuir&apos;s reporting feature
-            </li>
-            <li>Contact our Trust & Safety team at <a href="mailto:safety@renuir.com" className="text-primary-600 hover:text-primary-700">safety@renuir.com</a></li>
-            <li>If you feel in immediate danger, contact local law enforcement</li>
+          <ul className="list-disc pl-6 space-y-3 text-gray-700 font-medium">
+            <li><strong>Detailed Matching:</strong> Ensure the description and photos provided by the owner match the item you found.</li>
+            <li><strong>Ownership Questions:</strong> Use the platform to ask specific questions that only the owner would know (e.g., "What was the wallpaper on the phone?").</li>
+            <li><strong>Never Share Personal Sensitive Data:</strong> Do not share passwords, financial information, or your home address through the platform.</li>
           </ul>
         </section>
 
-        <section className="space-y-4">
-          <div className="p-6 bg-primary-50 rounded-xl border border-primary-100">
-            <p className="text-gray-900 font-semibold mb-2">Remember:</p>
-            <p className="text-gray-700 leading-relaxed">
-              Renuir is committed to creating a safe
-              platform for reuniting people with their belongings. If you ever have
-              concerns about your safety, trust your instincts and don&apos;t hesitate
-              to reach out to our support team.
-            </p>
-          </div>
+        <section className="space-y-4 border-t border-gray-100 pt-10">
+          <h3 className="text-2xl font-semibold text-gray-900">3. Shipping Items</h3>
+          <p className="text-gray-700 leading-relaxed">
+            If you choose to have an item shipped:
+          </p>
+          <ul className="list-disc pl-6 space-y-3 text-gray-700 font-medium">
+            <li><strong>Use Trackable Shipping:</strong> Always use a shipping method that provides a tracking number.</li>
+            <li><strong>Insurance:</strong> For valuable items, consider purchasing shipping insurance.</li>
+            <li><strong>Platform Payments:</strong> For shipping costs, always coordinate through our secure platform to avoid scams.</li>
+          </ul>
+        </section>
+
+        <section className="bg-orange-50 border border-orange-100 rounded-2xl p-8 mt-12">
+          <h3 className="text-xl font-bold text-orange-900 mb-3">Important Warning</h3>
+          <p className="text-orange-800 leading-relaxed font-medium">
+            Renuir will never ask you for your password or financial information via email or text. If you receive suspicious requests, please report them to <a href="mailto:safety@renuir.com" className="underline font-bold">safety@renuir.com</a> immediately.
+          </p>
         </section>
       </div>
     </div>
