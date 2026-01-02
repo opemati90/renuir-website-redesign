@@ -183,7 +183,7 @@ const HomeHero = () => {
             className="flex-1 w-full lg:w-auto"
           >
             <img
-              src="/images/hero.png"
+              src="/images/Hero_img.png"
               alt="Renuir platform illustration"
               className="w-full max-w-2xl mx-auto"
             />
