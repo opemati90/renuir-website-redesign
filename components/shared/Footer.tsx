@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 import Logo from "@/public/images/renuir-white.svg";
+import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (

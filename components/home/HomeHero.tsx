@@ -47,7 +47,7 @@ const HomeHero = () => {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0.1, 0.6)}
-            className="flex-1 lg:flex-[0.5] space-y-10"
+            className="flex-1 lg:flex-[0.45] space-y-10"
           >
             {/* Badge */}
             <motion.div
@@ -185,7 +185,7 @@ const HomeHero = () => {
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.9, x: 20 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="flex-1 lg:flex-[0.5] w-full flex items-center justify-center"
+            className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center"
           >
             <div className="relative w-full max-w-2xl mx-auto">
               {/* Subtle backdrop highlight */}
