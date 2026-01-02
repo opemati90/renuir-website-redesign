@@ -8,7 +8,6 @@ import { TailoredForEveryone } from "@/components/home/TailoredFor";
 
 const SECTIONS = [
   { Component: HomeHero, className: "" },
-  { Component: TrustedByStats, className: "" },
   { Component: TailoredForEveryone, className: "" },
   { Component: LostSomething, className: "" },
   { Component: HomeQuote, className: "" },
