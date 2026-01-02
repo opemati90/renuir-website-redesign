@@ -36,8 +36,8 @@ const Nav = () => {
               href={item.href}
               className={clsx(
                 pathname === item.href || (pathname === "/" && item.href.startsWith("/#"))
-                  ? "text-primary-600"
-                  : "text-gray-600 hover:text-gray-900",
+                  ? "text-slate-900"
+                  : "text-slate-700 hover:text-slate-900",
                 "px-4 py-2 text-sm font-semibold transition-colors"
               )}
             >
@@ -46,7 +46,7 @@ const Nav = () => {
           ))}
           <div className="pl-4">
             <Link href="/#waitlist">
-              <Button size="sm" className="rounded-lg font-bold px-5 bg-primary-600 hover:bg-primary-700 text-white shadow-sm transition-all">
+              <Button size="sm" className="rounded-lg font-bold px-5 bg-slate-900 hover:bg-slate-800 text-white shadow-sm transition-all">
                 Join waitlist
               </Button>
             </Link>

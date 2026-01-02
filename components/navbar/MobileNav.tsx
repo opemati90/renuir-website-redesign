@@ -57,7 +57,7 @@ const MobileNav = () => {
                     onClick={() => setSheetOpen(false)}
                     className={clsx(
                       "text-lg font-bold transition-colors",
-                      pathname === item.href ? "text-primary-600" : "text-gray-900"
+                      pathname === item.href ? "text-slate-900" : "text-slate-700"
                     )}
                   >
                     {item.name}
@@ -68,7 +68,7 @@ const MobileNav = () => {
 
             <div className="p-6 border-t border-gray-50 mt-auto">
               <Link href="/#waitlist" onClick={() => setSheetOpen(false)}>
-                <Button className="w-full h-12 rounded-xl font-bold bg-primary-600 hover:bg-primary-700 text-white text-base">
+                <Button className="w-full h-12 rounded-xl font-bold bg-slate-900 hover:bg-slate-800 text-white text-base">
                   Join waitlist
                 </Button>
               </Link>

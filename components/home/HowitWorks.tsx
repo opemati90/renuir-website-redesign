@@ -44,7 +44,7 @@ export const LostSomething = () => {
             variants={fadeIn("right", "tween", 0.2, 0.6)}
             className="order-2 lg:order-1"
           >
-            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 shadow-xl ring-1 ring-gray-200">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden">
               <Image
                 src="/images/works.png"
                 alt="How Renuir works"

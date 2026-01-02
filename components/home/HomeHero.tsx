@@ -6,8 +6,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import React from "react";
-import Link from "next/link";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { CheckCircleIcon, Mail, ArrowRight, Sparkles } from "lucide-react";
@@ -39,7 +37,7 @@ const HomeHero = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   return (
-    <section className="bg-white pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
+    <section className="bg-white pt-20 md:pt-24 pb-10 md:pb-16 overflow-hidden">
       <div ref={containerRef} className="app-container">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -161,20 +159,6 @@ const HomeHero = () => {
               </div>
             </motion.div>
 
-            {/* Learn more link */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-            >
-              <Link
-                href="/#how-it-works"
-                className="inline-flex items-center gap-2 text-base font-semibold text-gray-600 hover:text-primary-600 transition-colors group"
-              >
-                Learn how it works
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
           </motion.div>
 
           {/* Right Image */}
@@ -186,10 +170,9 @@ const HomeHero = () => {
           >
             <div className="relative w-full max-w-lg mx-auto">
               <img
-                src="/images/hero-img.png"
+                src="/images/heroo-img.png"
                 alt="Renuir platform illustration"
-                className="w-full h-auto object-contain drop-shadow-2xl"
-                style={{ aspectRatio: '1173/2397' }}
+                className="w-full h-auto object-contain"
               />
             </div>
           </motion.div>

@@ -20,12 +20,12 @@ const HomeQuote = () => {
             variants={fadeIn("right", "tween", 0, 0.6)}
             className="order-2 lg:order-1"
           >
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-xl ring-1 ring-gray-200">
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
               <Image
                 src="/images/Building.png"
                 alt="Why we're building Renuir"
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
