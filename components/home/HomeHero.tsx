@@ -190,10 +190,10 @@ const HomeHero = () => {
           >
             <div className="relative w-full h-full flex items-center justify-center">
               <Image
-                src="/images/hero.png"
+                src="/images/hero-img.png"
                 alt="Renuir platform illustration"
-                width={1090}
-                height={1500}
+                width={1173}
+                height={2397}
                 priority
                 className="w-full h-auto max-w-full object-contain"
                 style={{ maxWidth: '100%', height: 'auto' }}
