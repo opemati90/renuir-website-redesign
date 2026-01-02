@@ -65,29 +65,54 @@ type FAQItem = {
 
 export const faqs: FAQItem[] = [
   {
-    question: "How does this actually work?",
+    question: "How does Renuir actually work?",
     answer:
-      "You tell us what you lost and where you think you lost it. We reach out to venues in that area (hotels, airports, transit, restaurants) and check if they have it. If we find a match, we let you know right away.",
+      "It's simple: you report your lost item with a description and where you think you lost it. Our system automatically searches our network of partner venues (hotels, airports, transit systems, restaurants, and more) in real-time. When we find a potential match, you'll get an instant notification. You can then verify the match and coordinate pickup or shipping directly through the platform.",
   },
   {
-    question: "Is it really free?",
+    question: "Is it really free for individuals?",
     answer:
-      "Yep. Reporting a lost item and getting notified about matches costs you nothing. We make money by selling tools to businesses that help them manage their lost & found more easily.",
+      "Yes, completely free. Reporting a lost item, getting matched, and receiving notifications costs you nothing. We make money by providing businesses with tools to manage their lost & found operations more efficiently. This allows us to keep the service free for individuals while building a comprehensive network of partner venues.",
   },
   {
-    question: "What about my personal information?",
+    question: "How long does it typically take to find a match?",
     answer:
-      "We keep it private. Your contact info isn't visible to anyone until there's a confirmed match. Even then, you decide whether to share it.",
+      "Most matches happen within 24-48 hours, though it can vary depending on when and where you lost your item. Items lost in high-traffic areas like airports or hotels often get turned in quickly. Your report stays active for 90 days, and we'll keep searching our network continuously. You'll receive a notification immediately when a match is found.",
   },
   {
-    question: "What if nothing turns up right away?",
+    question: "What types of items can I report?",
     answer:
-      "That happens. Sometimes items take a few days to get turned in. Your report stays active, and we'll keep checking. You'll get a notification the moment something matches.",
+      "You can report virtually any lost item: luggage, electronics, wallets, keys, jewelry, clothing, documents, sports equipment, and more. The more details you provide (photos, serial numbers, distinctive features), the better our matching system can help. We work with venues that handle all types of lost property.",
   },
   {
-    question: "I run a hotel/venue. Can we use this?",
+    question: "How do you protect my personal information?",
     answer:
-      "Absolutely. We built Renuir for businesses too. It replaces spreadsheets and sticky notes with a simple system your staff will actually use. Join the waitlist and we'll reach out to set up a demo.",
+      "Privacy is our top priority. Your contact information is never visible to anyone until there's a confirmed match. Even then, you control whether to share your details. We use encryption for all data, comply with GDPR and CCPA regulations, and never sell your personal information. You can read our full Privacy Policy for complete details.",
+  },
+  {
+    question: "How do you verify that a match is actually my item?",
+    answer:
+      "Our matching system uses AI to compare descriptions, photos, and location data. When a potential match is found, you'll see photos and details from the venue. You can verify distinctive features, serial numbers, or other identifying marks before confirming. We also require venues to verify ownership through security questions or documentation before releasing items.",
+  },
+  {
+    question: "What if my item is never found?",
+    answer:
+      "Unfortunately, not every lost item gets turned in. Your report stays active for 90 days, and we'll continue searching as new items are logged by our partner venues. If your item isn't found, you haven't lost anything—the service is free. We also provide tips on additional steps you can take, like contacting venues directly or filing police reports for valuable items.",
+  },
+  {
+    question: "Can businesses and venues use Renuir?",
+    answer:
+      "Absolutely! Renuir offers a complete lost & found management system for businesses. It replaces spreadsheets and manual processes with a streamlined platform that your staff will actually use. Features include photo uploads, automatic matching, secure handoff processes, and detailed reporting. Join our business waitlist and we'll reach out to set up a demo tailored to your needs.",
+  },
+  {
+    question: "What locations and venues do you cover?",
+    answer:
+      "We're continuously expanding our network. Currently, we partner with major airports, hotel chains, transit systems, restaurants, event venues, and retail locations across multiple regions. When you report an item, we search all relevant venues in that area. The more venues in our network, the better your chances of finding your item.",
+  },
+  {
+    question: "Do I need to create an account to use Renuir?",
+    answer:
+      "For basic reporting, you can submit a lost item report with just your email address. However, creating a free account gives you access to additional features like tracking all your reports in one place, receiving push notifications, managing your profile, and faster reporting for future incidents. Account creation takes less than a minute.",
   },
 ];
 
