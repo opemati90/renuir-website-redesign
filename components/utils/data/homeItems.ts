@@ -7,9 +7,13 @@ import {
   Heart,
   Smartphone,
   BoxIcon,
+  Search,
+  CheckCircle,
+  Zap,
+  BarChart3,
+  RefreshCw,
+  ShieldCheck
 } from "lucide-react";
-import { Zap, ShieldCheck } from "lucide-react";
-import { BarChart3, RefreshCw } from "lucide-react";
 
 export const Loststat = [
   {
@@ -21,98 +25,20 @@ export const Loststat = [
     order: "1",
   },
   {
-    icon: Sparkle,
-
-    value: "We search",
-    label: "AI checks and matches in real time",
+    icon: Search,
+    value: "Smart search",
+    label: "Automated checks across our network",
     bg: "bg-white",
     iconColor: "text-primary-600",
     order: "2",
   },
   {
     icon: BoxIcon,
-
     value: "Get it back",
-    label: "Pick up or have it shipped",
+    label: "Pick up or have it shipped to you",
     bg: "bg-white",
     iconColor: "text-primary-600",
     order: "3",
-  },
-];
-
-export const times = [
-  {
-    icon: Shield,
-    value: "100%",
-    label: "Seucre Verification",
-  },
-  {
-    icon: Clock1,
-    value: "48 hrs",
-    label: "Average recovery time",
-  },
-  {
-    icon: Users2,
-    value: "10k+",
-    label: "Items reunited",
-  },
-];
-
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
-export const faqs: FAQItem[] = [
-  {
-    question: "How does Renuir actually work?",
-    answer:
-      "It's simple: you report your lost item with a description and where you think you lost it. Our system automatically searches our network of partner venues (hotels, airports, transit systems, restaurants, and more) in real-time. When we find a potential match, you'll get an instant notification. You can then verify the match and coordinate pickup or shipping directly through the platform.",
-  },
-  {
-    question: "Is it really free for individuals?",
-    answer:
-      "Yes, completely free. Reporting a lost item, getting matched, and receiving notifications costs you nothing. We make money by providing businesses with tools to manage their lost & found operations more efficiently. This allows us to keep the service free for individuals while building a comprehensive network of partner venues.",
-  },
-  {
-    question: "How long does it typically take to find a match?",
-    answer:
-      "Most matches happen within 24-48 hours, though it can vary depending on when and where you lost your item. Items lost in high-traffic areas like airports or hotels often get turned in quickly. Your report stays active for 90 days, and we'll keep searching our network continuously. You'll receive a notification immediately when a match is found.",
-  },
-  {
-    question: "What types of items can I report?",
-    answer:
-      "You can report virtually any lost item: luggage, electronics, wallets, keys, jewelry, clothing, documents, sports equipment, and more. The more details you provide (photos, serial numbers, distinctive features), the better our matching system can help. We work with venues that handle all types of lost property.",
-  },
-  {
-    question: "How do you protect my personal information?",
-    answer:
-      "Privacy is our top priority. Your contact information is never visible to anyone until there's a confirmed match. Even then, you control whether to share your details. We use encryption for all data, comply with GDPR and CCPA regulations, and never sell your personal information. You can read our full Privacy Policy for complete details.",
-  },
-  {
-    question: "How do you verify that a match is actually my item?",
-    answer:
-      "Our matching system uses AI to compare descriptions, photos, and location data. When a potential match is found, you'll see photos and details from the venue. You can verify distinctive features, serial numbers, or other identifying marks before confirming. We also require venues to verify ownership through security questions or documentation before releasing items.",
-  },
-  {
-    question: "What if my item is never found?",
-    answer:
-      "Unfortunately, not every lost item gets turned in. Your report stays active for 90 days, and we'll continue searching as new items are logged by our partner venues. If your item isn't found, you haven't lost anything—the service is free. We also provide tips on additional steps you can take, like contacting venues directly or filing police reports for valuable items.",
-  },
-  {
-    question: "Can businesses and venues use Renuir?",
-    answer:
-      "Absolutely! Renuir offers a complete lost & found management system for businesses. It replaces spreadsheets and manual processes with a streamlined platform that your staff will actually use. Features include photo uploads, automatic matching, secure handoff processes, and detailed reporting. Join our business waitlist and we'll reach out to set up a demo tailored to your needs.",
-  },
-  {
-    question: "What locations and venues do you cover?",
-    answer:
-      "We're continuously expanding our network. Currently, we partner with major airports, hotel chains, transit systems, restaurants, event venues, and retail locations across multiple regions. When you report an item, we search all relevant venues in that area. The more venues in our network, the better your chances of finding your item.",
-  },
-  {
-    question: "Do I need to create an account to use Renuir?",
-    answer:
-      "For basic reporting, you can submit a lost item report with just your email address. However, creating a free account gives you access to additional features like tracking all your reports in one place, receiving push notifications, managing your profile, and faster reporting for future incidents. Account creation takes less than a minute.",
   },
 ];
 
@@ -127,78 +53,128 @@ export const trustedByStats = [
   {
     icon: Clock,
     value: "Always on",
-    label: "We search 24/7",
-    bg: "bg-orange-50",
-    iconColor: "text-orange-500",
+    label: "Active 24/7 search",
+    bg: "bg-blue-50",
+    iconColor: "text-blue-500",
   },
   {
     icon: ShieldCheck,
-    value: "Private",
-    label: "Your info stays safe",
+    value: "Secure",
+    label: "Privacy-first platform",
     bg: "bg-green-50",
     iconColor: "text-green-600",
   },
   {
     icon: Heart,
     value: "Free",
-    label: "for individuals",
-    bg: "bg-purple-50",
-    iconColor: "text-purple-600",
+    label: "For all individuals",
+    bg: "bg-indigo-50",
+    iconColor: "text-indigo-600",
   },
 ];
 
 export const businessFeatures = [
   {
     icon: Zap,
-    title: "Log items in seconds",
+    title: "Instant logging",
     description:
-      "Staff snap a photo, we handle the rest. No more spreadsheets or handwritten logs.",
+      "Capture items in seconds with automated categorization. Ditch the spreadsheets for good.",
   },
   {
     icon: BarChart3,
-    title: "See what gets lost",
+    title: "Insightful analytics",
     description:
-      "Know which items pile up, where they come from, and how long they sit unclaimed.",
+      "Track item volume, recovery rates, and storage duration with professional reporting tools.",
   },
   {
     icon: RefreshCw,
-    title: "Automatic matching",
+    title: "Automated matching",
     description:
-      "When someone reports a lost item, we check your inventory instantly. You just confirm the match.",
+      "Our system instantly cross-references reports to find matches before you even look.",
   },
   {
     icon: ShieldCheck,
-    title: "Safe handoffs",
+    title: "Secure handoffs",
     description:
-      "Verify the owner's identity before returning anything. Simple pickup or shipping options built in.",
+      "Verified owner identification and integrated shipping options for a professional service.",
   },
 ];
 
 export const consumerFeatures = [
   {
     icon: Smartphone,
-    title: "Report once, search everywhere",
+    title: "Network-wide search",
     description:
-      "Fill out one form. We check airports, hotels, transit, and more. You don't have to.",
+      "Report once and we'll check airports, hotels, transit, and more across our growing network.",
   },
   {
-    icon: Sparkle,
-    title: "Get notified when it's found",
+    icon: CheckCircle,
+    title: "Real-time alerts",
     description:
-      "The moment there's a potential match, you'll know. No more checking back every day.",
+      "Get notified the moment a potential match is found. No more manual follow-ups needed.",
   },
   {
     icon: Shield,
-    title: "Photos help us find it faster",
+    title: "Photo verification",
     description:
-      "Got a picture of your bag or laptop? Upload it. It makes matching way more accurate.",
+      "Upload photos to help our matching system verify your item with higher accuracy.",
   },
   {
     icon: ShieldCheck,
-    title: "Your info stays private",
+    title: "Privacy first",
     description:
-      "We don't share your details until there's a confirmed match and you say it's okay.",
+      "Your personal details are never shared until a match is confirmed and you give permission.",
+  },
+];
+
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+export const faqs: FAQItem[] = [
+  {
+    question: "How does Renuir actually work?",
+    answer:
+      "You report your lost item with a description and location. Our system automatically cross-references our network of partner venues (hotels, airports, transit systems, and more). When a potential match is identified, you'll receive an instant notification to verify and coordinate retrieval.",
+  },
+  {
+    question: "Is it really free for individuals?",
+    answer:
+      "Yes. Reporting lost items and receiving match notifications is free for everyone. We partner with businesses to provide them with professional management tools, which keeps the service free for the public.",
+  },
+  {
+    question: "How long does it take to find a match?",
+    answer:
+      "Many matches happen within 24-48 hours. Your report remains active and is continuously checked against new inventory for 90 days. You'll be notified immediately upon a confirmed match.",
+  },
+  {
+    question: "What types of items can I report?",
+    answer:
+      "Anything from electronics and wallets to luggage and documents. Detailed descriptions and photos significantly improve matching speed and accuracy.",
+  },
+  {
+    question: "How is my data protected?",
+    answer:
+      "We use enterprise-grade encryption and strictly follow GDPR and CCPA guidelines. Your personal information is never sold and is only shared with verified partners after a confirmed match.",
+  },
+  {
+    question: "How do you verify ownership?",
+    answer:
+      "Our matching system compares specific details and photos. Venues are also required to verify identity through security questions or documentation before releasing items to ensure they reach the correct owner.",
+  },
+  {
+    question: "What if my item isn't found immediately?",
+    answer:
+      "If a match isn't found right away, our system continues to search 24/7 as new items are turned in. We also provide guidance on additional steps you can take for valuable property.",
+  },
+  {
+    question: "Can businesses join the network?",
+    answer:
+      "Yes. Renuir provides a professional lost & found management system for organizations of all sizes. Contact our partnerships team to learn how to streamline your operations.",
   },
 ];
 
 export const features = businessFeatures;
+export const businessFeaturesData = businessFeatures;
+export const consumerFeaturesData = consumerFeatures;

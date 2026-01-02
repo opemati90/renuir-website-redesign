@@ -3,11 +3,12 @@ import HomeHero from "@/components/home/HomeHero";
 import HomeQuote from "@/components/home/HomeQuote";
 import { EarlyAccessSection } from "@/components/home/HomeWaitlist";
 import { LostSomething } from "@/components/home/HowitWorks";
-
 import { TailoredForEveryone } from "@/components/home/TailoredFor";
+import { TrustedByStats } from "@/components/home/TrustedBy";
 
 const SECTIONS = [
   { Component: HomeHero, className: "" },
+  { Component: TrustedByStats, className: "" },
   { Component: TailoredForEveryone, className: "" },
   { Component: LostSomething, className: "" },
   { Component: HomeQuote, className: "" },

@@ -7,36 +7,38 @@ import { fadeIn } from "../Variants";
 
 export const TrustedByStats = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="bg-white border-b border-gray-100 py-16 md:py-24">
+    <section className="bg-white border-y border-gray-100 py-12 md:py-16">
       <div ref={ref} className="app-container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-x-0 lg:divide-x divide-gray-100">
           {trustedByStats.map((stat, index) => (
             <motion.div
               key={index}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
-              variants={fadeIn("up", "tween", index * 0.1, 0.5)}
-              className="flex flex-col items-center gap-4 py-6"
+              variants={fadeIn("up", "tween", index * 0.1, 0.4)}
+              className="flex flex-col items-center gap-3 px-4"
             >
               <div
-                className={`flex items-center justify-center h-14 w-14 rounded-xl ${stat.bg} shadow-sm`}
+                className={`flex items-center justify-center h-12 w-12 rounded-xl bg-gray-50 border border-gray-100 text-gray-400 group-hover:text-primary-600 transition-colors`}
               >
-                <stat.icon className={`h-7 w-7 ${stat.iconColor}`} />
+                <stat.icon className={`h-6 w-6`} />
               </div>
 
-              <Typography variant="h3" className="font-bold text-gray-900">
-                {stat.value}
-              </Typography>
+              <div className="text-center">
+                <Typography variant="h3" className="font-black text-gray-900 text-2xl tracking-tight">
+                  {stat.value}
+                </Typography>
 
-              <Typography
-                variant="h4"
-                className="text-gray-600 text-sm text-center font-medium"
-              >
-                {stat.label}
-              </Typography>
+                <Typography
+                  variant="smallText"
+                  className="text-gray-500 text-sm font-bold uppercase tracking-wider mt-1"
+                >
+                  {stat.label}
+                </Typography>
+              </div>
             </motion.div>
           ))}
         </div>
