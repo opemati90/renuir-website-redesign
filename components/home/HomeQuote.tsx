@@ -10,7 +10,7 @@ const HomeQuote = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="bg-gray-50 py-16 md:py-20" id="about">
+    <section className="bg-gray-50 py-10 md:py-12" id="about">
       <div ref={ref} className="app-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Content Side */}

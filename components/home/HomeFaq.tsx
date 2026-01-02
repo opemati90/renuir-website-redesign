@@ -17,7 +17,7 @@ export const FAQSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" className="bg-white py-16 md:py-20">
+    <section id="faq" className="bg-white py-10 md:py-12">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -86,12 +86,12 @@ export const FAQSection = () => {
           {/* Decorative background element */}
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-white">
             <div className="flex-1 text-center md:text-left space-y-4">
-              <Typography variant="h3" className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+              <Typography variant="h3" className="text-3xl md:text-4xl font-black tracking-tight leading-tight !text-white">
                 More than just an automated platform.
               </Typography>
-              <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
+              <p className="text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed">
                 Our dedicated support team is here to ensure every lost item has the best chance of finding its way back home.
               </p>
             </div>
