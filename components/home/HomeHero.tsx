@@ -186,7 +186,7 @@ const HomeHero = () => {
               src="/images/Hero-img.png"
               alt="Renuir platform illustration"
               className="w-full h-auto object-contain max-w-full"
-              style={{ aspectRatio: '4578/3433' }}
+              style={{ aspectRatio: '1564/3195' }}
             />
           </motion.div>
         </div>
