@@ -40,33 +40,33 @@ export const EarlyAccessSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="waitlist" className="bg-gray-50 py-24 md:py-32">
+    <section id="waitlist" className="bg-white py-20 md:py-28 border-t border-gray-100">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
         variants={fadeIn("up", "tween", 0, 0.5)}
-        className="app-container max-w-4xl text-center"
+        className="app-container max-w-2xl text-center"
       >
-        <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-primary-50/80 border border-primary-100 backdrop-blur-sm mb-8">
-          <Sparkles className="h-4 w-4 text-primary-600 fill-primary-600/10" />
-          <span className="text-sm font-bold text-primary-800 tracking-tight">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 mb-6">
+          <Sparkles className="h-4 w-4 text-primary-600" />
+          <span className="text-sm font-semibold text-primary-700">
             Be the first to know when we launch
           </span>
         </div>
 
-        <Typography variant="h1" className="font-black text-gray-900 text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tightest leading-tight">
+        <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl mb-5 tracking-tight">
           Ready to Renuir?
         </Typography>
 
-        <Typography variant="h4" className="text-gray-500 font-medium text-lg md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-500 text-lg md:text-xl mb-10 leading-relaxed">
           Join the waitlist today for early access and exclusive updates. No spam, just progress.
-        </Typography>
+        </p>
 
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
           >
             <FormField
               control={form.control}
@@ -75,11 +75,11 @@ export const EarlyAccessSection = () => {
                 <FormItem className="flex-1 w-full">
                   <FormControl>
                     <div className="relative group">
-                      <Mail className="absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 group-focus-within:text-primary-500 transition-colors" />
+                      <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 group-focus-within:text-primary-500 transition-colors" />
                       <Input
                         {...field}
                         placeholder="Enter your email"
-                        className="pl-14 h-16 text-lg rounded-2xl border-2 border-white focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 bg-white shadow-sm transition-all placeholder:text-gray-400"
+                        className="pl-12 h-14 text-base rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/10 bg-gray-50 focus:bg-white shadow-sm transition-all placeholder:text-gray-400"
                       />
                     </div>
                   </FormControl>
@@ -91,16 +91,16 @@ export const EarlyAccessSection = () => {
             <Button
               type="submit"
               size="lg"
-              className="h-16 px-10 text-lg font-bold rounded-2xl bg-primary-600 hover:bg-primary-700 text-white shadow-xl shadow-primary-600/20 hover:shadow-2xl hover:shadow-primary-600/30 hover:-translate-y-0.5 transition-all duration-300 active:translate-y-0"
+              className="h-14 px-8 text-base font-bold rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
             >
               Join the list
-              <ArrowRight className="ml-2.5 h-6 w-6" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </form>
         </Form>
 
-        <p className="mt-8 text-sm font-bold text-gray-400">
-          Already 500+ people waiting.
+        <p className="mt-6 text-sm text-gray-400">
+          Join 500+ people already on the waitlist.
         </p>
       </motion.div>
     </section>

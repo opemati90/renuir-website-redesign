@@ -16,39 +16,39 @@ export const TailoredForEveryone = () => {
   const features = audience === "business" ? businessFeatures : consumerFeatures;
 
   return (
-    <section className="app-container py-24 md:py-32" id="features">
+    <section className="app-container py-20 md:py-28" id="features">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
         variants={fadeIn("up", "tween", 0, 0.5)}
-        className="text-center max-w-3xl mx-auto"
+        className="text-center max-w-2xl mx-auto mb-12 md:mb-16"
       >
-        <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-5xl tracking-tight">
+        <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl tracking-tight mb-5">
           Built for how you actually use it
         </Typography>
 
         <Typography
-          variant="h4"
-          className="text-gray-500 font-medium mt-6 text-lg md:text-xl leading-relaxed"
+          variant="p"
+          className="text-gray-500 text-lg md:text-xl leading-relaxed"
         >
           Different needs, same goal: getting stuff back to its owner, fast.
         </Typography>
 
         {/* Toggle */}
-        <div className="inline-flex mt-10 rounded-xl bg-gray-100 p-1.5 ring-1 ring-gray-200">
+        <div className="inline-flex mt-8 rounded-lg bg-gray-100 p-1">
           <Button
-            size="lg"
+            size="default"
             variant={audience === "consumer" ? "default" : "ghost"}
-            className={audience === "consumer" ? "rounded-lg font-bold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-lg font-bold text-gray-500 hover:text-gray-900"}
+            className={audience === "consumer" ? "rounded-md font-semibold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-md font-semibold text-gray-500 hover:text-gray-900"}
             onClick={() => setAudience("consumer")}
           >
             For Individuals
           </Button>
           <Button
-            size="lg"
+            size="default"
             variant={audience === "business" ? "default" : "ghost"}
-            className={audience === "business" ? "rounded-lg font-bold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-lg font-bold text-gray-500 hover:text-gray-900"}
+            className={audience === "business" ? "rounded-md font-semibold bg-white text-gray-900 shadow-sm hover:bg-white" : "rounded-md font-semibold text-gray-500 hover:text-gray-900"}
             onClick={() => setAudience("business")}
           >
             For Business
@@ -56,29 +56,26 @@ export const TailoredForEveryone = () => {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <motion.div
             key={index}
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0.2 + index * 0.1, 0.4)}
-            className="p-8 border border-gray-100 rounded-2xl bg-white shadow-xs hover:shadow-md hover:border-gray-200 transition-all duration-300"
+            className="p-6 border border-gray-100 rounded-xl bg-white hover:shadow-md hover:border-gray-200 transition-all duration-300"
           >
-            <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-primary-50 text-primary-600 mb-6">
-              <feature.icon className="h-7 w-7" />
+            <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary-50 text-primary-600 mb-5">
+              <feature.icon className="h-6 w-6" />
             </div>
 
-            <Typography variant="h4" className="font-bold mb-3 text-gray-900 text-xl">
+            <h3 className="font-bold mb-2 text-gray-900 text-lg">
               {feature.title}
-            </Typography>
+            </h3>
 
-            <Typography
-              variant="smallText"
-              className="text-gray-500 text-base leading-relaxed font-medium"
-            >
+            <p className="text-gray-500 text-base leading-relaxed">
               {feature.description}
-            </Typography>
+            </p>
           </motion.div>
         ))}
       </div>

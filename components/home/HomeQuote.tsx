@@ -10,9 +10,9 @@ const HomeQuote = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="bg-white py-24 md:py-32" id="about">
+    <section className="bg-white py-20 md:py-28" id="about">
       <div ref={ref} className="app-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
           <motion.div
             initial="hidden"
@@ -20,12 +20,12 @@ const HomeQuote = () => {
             variants={fadeIn("right", "tween", 0, 0.6)}
             className="order-2 lg:order-1"
           >
-            <div className="relative w-full aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl shadow-gray-200 ring-1 ring-gray-100">
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 shadow-xl ring-1 ring-gray-200">
               <Image
                 src="/images/Building.png"
                 alt="Why we're building Renuir"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -37,22 +37,20 @@ const HomeQuote = () => {
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("left", "tween", 0.2, 0.6)}
-            className="order-1 lg:order-2 space-y-10"
+            className="order-1 lg:order-2 space-y-6"
           >
-            <div className="space-y-4">
-              <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-5xl lg:text-6xl leading-tight tracking-tightest">
-                Why we&apos;re building this
-              </Typography>
-            </div>
+            <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
+              Why we&apos;re building this
+            </Typography>
 
-            <div className="space-y-8">
-              <Typography variant="h4" className="font-medium text-gray-500 leading-relaxed text-lg md:text-2xl">
+            <div className="space-y-5">
+              <p className="text-gray-500 leading-relaxed text-base md:text-lg">
                 We&apos;ve all been there. That sinking feeling when you realize your bag is gone. Then comes the worst part: calling every place you visited, repeating the same description, hoping someone picked it up.
-              </Typography>
+              </p>
 
-              <Typography variant="h4" className="font-bold text-gray-900 leading-relaxed text-lg md:text-2xl">
+              <p className="font-semibold text-gray-900 leading-relaxed text-base md:text-lg">
                 We&apos;re building Renuir because that process is broken. One report should be enough. We want to make it easy to get your stuff back, and easy for good people to return what they find.
-              </Typography>
+              </p>
             </div>
           </motion.div>
         </div>

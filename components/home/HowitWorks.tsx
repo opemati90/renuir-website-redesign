@@ -16,7 +16,7 @@ export const LostSomething = () => {
   return (
     <section
       id="how-it-works"
-      className="bg-gray-50/50 py-24 md:py-32"
+      className="bg-gray-50 py-20 md:py-28"
     >
       <div ref={ref} className="app-container">
         {/* Header */}
@@ -24,9 +24,9 @@ export const LostSomething = () => {
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
           variants={fadeIn("up", "tween", 0, 0.6)}
-          className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
+          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
         >
-          <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-5xl tracking-tight mb-6">
+          <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl tracking-tight mb-5">
             How it works
           </Typography>
 
@@ -36,7 +36,7 @@ export const LostSomething = () => {
         </motion.div>
 
         {/* Image and Steps Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16">
           {/* Image */}
           <motion.div
             initial="hidden"
@@ -44,12 +44,12 @@ export const LostSomething = () => {
             variants={fadeIn("right", "tween", 0.2, 0.6)}
             className="order-2 lg:order-1"
           >
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-gray-200 ring-1 ring-gray-100">
+            <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 shadow-xl ring-1 ring-gray-200">
               <Image
-                src="/images/work.png"
+                src="/images/works.png"
                 alt="How Renuir works"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -57,30 +57,30 @@ export const LostSomething = () => {
           </motion.div>
 
           {/* Steps */}
-          <div className="order-1 lg:order-2 space-y-10">
+          <div className="order-1 lg:order-2 space-y-8">
             {Loststat.map((stat, index) => (
               <motion.div
                 key={index}
                 initial="hidden"
                 animate={isInView ? "show" : "hidden"}
                 variants={fadeIn("left", "tween", 0.3 + index * 0.15, 0.6)}
-                className="flex items-start gap-8 group"
+                className="flex items-start gap-6 group"
               >
-                <div className="relative flex-shrink-0 pt-1">
+                <div className="relative flex-shrink-0">
                   <div
-                    className="flex items-center justify-center h-16 w-16 rounded-2xl bg-white border border-gray-100 shadow-sm text-primary-600 font-black text-2xl group-hover:scale-110 transition-transform duration-300"
+                    className="flex items-center justify-center h-12 w-12 rounded-xl bg-white border border-gray-200 shadow-sm text-primary-600 font-bold text-xl group-hover:scale-105 transition-transform duration-300"
                   >
                     {stat.order}
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <Typography variant="h4" className="font-bold text-gray-900 text-xl md:text-2xl tracking-tight">
+                <div className="space-y-2">
+                  <Typography variant="h4" className="font-bold text-gray-900 text-lg md:text-xl tracking-tight">
                     {stat.value}
                   </Typography>
                   <Typography
                     variant="smallText"
-                    className="text-gray-500 leading-relaxed text-base md:text-lg font-medium"
+                    className="text-gray-500 leading-relaxed text-base font-medium"
                   >
                     {stat.label}
                   </Typography>
@@ -98,9 +98,9 @@ export const LostSomething = () => {
           className="flex justify-center"
         >
           <Link href="/#waitlist">
-            <Button size="lg" className="px-10 h-16 rounded-2xl font-bold text-lg bg-primary-600 hover:bg-primary-700 text-white shadow-xl shadow-primary-600/20 hover:shadow-2xl hover:shadow-primary-600/30 hover:-translate-y-0.5 transition-all duration-300">
+            <Button size="lg" className="px-8 h-14 rounded-xl font-bold text-base bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
               Get started now
-              <ArrowRight className="ml-2 h-6 w-6" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </motion.div>
