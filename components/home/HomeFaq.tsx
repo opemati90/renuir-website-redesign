@@ -10,41 +10,58 @@ import { faqs } from "../utils/data/homeItems";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { fadeIn } from "../Variants";
-import { HelpCircle, ArrowRight, CheckCircle2 } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 
 export const FAQSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="faq" className="bg-white py-16 md:py-24">
+    <section id="faq" className="bg-gradient-to-b from-gray-50 to-white py-24 md:py-32">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
-        variants={fadeIn("up", "tween", 0, 0.5)}
+        variants={fadeIn("up", "tween", 0, 0.6)}
         className="app-container max-w-4xl"
       >
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-50 mb-8 border border-primary-100">
-            <HelpCircle className="h-7 w-7 text-primary-600" />
-          </div>
-          
-          <Typography variant="h2" className="font-bold text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-6 tracking-tight">
-            Frequently Asked Questions
-          </Typography>
-
-          <Typography
-            variant="h4"
-            className="text-gray-500 font-normal text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-100 mb-6"
           >
-            Everything you need to know about the Renuir platform. Can&apos;t find what you&apos;re looking for?{" "}
-            <a href="mailto:info@renuir.com" className="text-primary-600 hover:text-primary-700 font-bold transition-colors">
-              Contact our team
-            </a>
-            .
-          </Typography>
+            <HelpCircle className="h-8 w-8 text-primary-600" />
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <Typography variant="h2" className="font-bold text-gray-900 text-3xl md:text-4xl lg:text-5xl mb-4">
+              Frequently Asked Questions
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <Typography
+              variant="h4"
+              className="text-gray-600 font-normal text-lg md:text-xl max-w-2xl mx-auto"
+            >
+              Everything you need to know about Renuir. Can't find what you're looking for?{" "}
+              <a href="mailto:info@renuir.com" className="text-primary-600 hover:text-primary-700 underline">
+                Contact us
+              </a>
+              .
+            </Typography>
+          </motion.div>
         </div>
 
         {/* FAQ Accordion */}
@@ -56,20 +73,22 @@ export const FAQSection = () => {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial="hidden"
-              animate={isInView ? "show" : "hidden"}
-              variants={fadeIn("up", "tween", 0.2 + index * 0.05, 0.4)}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
             >
               <AccordionItem
                 value={`item-${index}`}
-                className="rounded-[1.5rem] border border-gray-100 bg-gray-50/30 px-8 py-2 shadow-sm hover:shadow-md hover:border-primary-100 transition-all duration-300 data-[state=open]:bg-white data-[state=open]:border-primary-200 data-[state=open]:shadow-lg overflow-hidden"
+                className="rounded-2xl border border-gray-200 bg-white px-6 py-4 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-300 data-[state=open]:border-primary-300 data-[state=open]:shadow-lg"
               >
-                <AccordionTrigger className="text-left text-lg md:text-xl font-bold text-gray-900 hover:no-underline py-6 data-[state=open]:text-primary-600">
+                <AccordionTrigger className="text-left text-lg md:text-xl font-semibold text-gray-900 hover:no-underline py-4 data-[state=open]:text-primary-600 group">
                   <span className="flex-1 pr-4">{faq.question}</span>
                 </AccordionTrigger>
 
-                <AccordionContent className="text-gray-600 text-base md:text-lg leading-relaxed pb-8">
-                  {faq.answer}
+                <AccordionContent className="text-gray-700 text-base md:text-lg leading-relaxed pt-2 pb-4">
+                  <div className="pl-0">
+                    {faq.answer}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             </motion.div>
@@ -78,50 +97,23 @@ export const FAQSection = () => {
 
         {/* CTA */}
         <motion.div
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-          variants={fadeIn("up", "tween", 0.6, 0.5)}
-          className="mt-20 p-8 md:p-12 bg-gray-900 rounded-[2.5rem] text-white shadow-2xl overflow-hidden relative"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="text-center mt-16 md:mt-20"
         >
-          {/* Decorative background element */}
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="flex-1 text-center md:text-left space-y-6">
-              <Typography variant="h3" className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-                More than just an automated platform.
-              </Typography>
-              <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
-                Our dedicated support team is here to ensure every lost item has the best chance of finding its way back home.
-              </p>
-              
-              <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 pt-2">
-                {[
-                  "Retrieval assistance",
-                  "Shipping coordination",
-                  "Match verification"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-gray-300 font-bold text-sm uppercase tracking-wider">
-                    <CheckCircle2 className="w-5 h-5 text-primary-500" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="flex flex-col items-center md:items-end gap-4 min-w-fit">
-              <a
-                href="mailto:info@renuir.com"
-                className="inline-flex items-center gap-2.5 px-10 py-5 rounded-2xl bg-white text-gray-900 font-black text-xl hover:bg-gray-100 transition-all active:scale-[0.98] shadow-lg"
-              >
-                Get in touch
-                <ArrowRight className="h-6 w-6" />
-              </a>
-              <p className="text-gray-500 text-sm font-bold uppercase tracking-widest">
-                Response within 24 hours
-              </p>
-            </div>
-          </div>
+          <Typography variant="h4" className="text-gray-700 mb-4 font-medium">
+            Still have questions?
+          </Typography>
+          <a
+            href="mailto:info@renuir.com"
+            className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+          >
+            Get in touch with our support team
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
         </motion.div>
       </motion.div>
     </section>

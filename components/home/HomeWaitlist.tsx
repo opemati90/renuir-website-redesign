@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 
-import { Mail, ArrowRight, Sparkles } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { fadeIn } from "../Variants";
@@ -37,72 +37,69 @@ export const EarlyAccessSection = () => {
   };
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="waitlist" className="bg-gray-50 py-16 md:py-24">
+    <section id="waitlist" className="bg-white py-20 md:py-28">
       <motion.div
         ref={ref}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
         variants={fadeIn("up", "tween", 0, 0.5)}
-        className="app-container max-w-4xl text-center"
+        className="app-container max-w-3xl text-center"
       >
-        <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-primary-50 border border-primary-100 shadow-sm">
-          <Sparkles className="h-4 w-4 text-primary-600 fill-primary-600/10" />
-          <span className="text-sm font-bold text-primary-800 uppercase tracking-wider">
-            Coming Soon
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100">
+          <span className="text-sm font-medium text-gray-700">
+            Launching soon
           </span>
         </div>
 
-        <Typography variant="h2" className="font-black text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-6 mt-8 tracking-tightest">
-          Ready to join the network?
+        <Typography variant="h1" className="font-bold text-gray-900 text-3xl md:text-4xl mb-4 mt-6">
+          Be the first to know
         </Typography>
 
-        <Typography variant="h4" className="text-gray-500 font-normal text-xl md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed">
-          Be the first to experience the new standard in property recovery. Sign up for early access today.
+        <Typography variant="h4" className="text-gray-600 font-normal text-lg mb-8">
+          Join the waitlist and we&apos;ll notify you when Renuir launches.
         </Typography>
 
-        <div className="max-w-2xl mx-auto">
-          <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-white p-2 rounded-[2rem] shadow-2xl border border-gray-100"
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto"
+          >
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="flex-1 w-full">
+                  <FormControl>
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+                      <Input
+                        {...field}
+                        placeholder="Enter your email"
+                        className="pl-12 h-12 text-base rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+                      />
+                    </div>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button
+              type="submit"
+              size="lg"
+              className="h-12 px-6 rounded-lg font-semibold bg-primary-600 hover:bg-primary-700 text-white"
             >
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem className="flex-1 w-full">
-                    <FormControl>
-                      <div className="relative group">
-                        <Mail className="absolute left-6 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 group-focus-within:text-primary-500 transition-colors" />
-                        <Input
-                          {...field}
-                          placeholder="Enter your email"
-                          className="pl-14 h-16 text-lg rounded-2xl border-none focus:ring-0 bg-transparent placeholder:text-gray-400 shadow-none"
-                        />
-                      </div>
-                    </FormControl>
-                    <FormMessage className="absolute -bottom-6 left-6" />
-                  </FormItem>
-                )}
-              />
+              Join waitlist
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </form>
+        </Form>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full sm:w-auto h-16 px-10 rounded-2xl font-black text-lg bg-primary-600 hover:bg-primary-700 text-white shadow-xl shadow-primary-600/20 transition-all active:scale-[0.98]"
-              >
-                Join the Waitlist
-                <ArrowRight className="ml-2.5 h-6 w-6" />
-              </Button>
-            </form>
-          </Form>
-        </div>
-
-        <p className="mt-10 text-gray-400 font-medium">
-          Professional. Secure. Guaranteed privacy.
+        <p className="mt-4 text-sm text-gray-500">
+          No spam. Unsubscribe anytime.
         </p>
       </motion.div>
     </section>
