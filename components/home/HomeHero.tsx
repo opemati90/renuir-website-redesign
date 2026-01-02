@@ -7,12 +7,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import React from "react";
+import Link from "next/link";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
 import { CheckCircleIcon, Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import { transition1 } from "../Transition";
-import { fadeIn } from "../Variants";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -34,21 +32,13 @@ const HomeHero = () => {
   };
 
   return (
-    <motion.section className="bg-linear-to-b from-white to-primary-10  pt-0 md:pt-12">
+    <section className="bg-white pt-0 md:pt-12">
       <div className="app-container flex flex-col md:flex-row gap-12 basis items-center pb-20">
-        <motion.div
-          variants={fadeIn("down", "tween", 0.2, 0.8)}
-          initial="hidden"
-          whileInView={"show"}
-          exit={"show"}
-          className="basis-full md:basis-[1/2] "
-        >
-          <div className="flex flex-col gap-6  items-center md:items-start">
-            <div className="inline-flex items-center rounded-full border border-border shadow-xs px-3 py-2">
-              <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite]" />
-
-              <span className="ml-2 text-sm font-medium text-primary-700">
-                Waitlist Now open
+        <div className="basis-full md:basis-[1/2]">
+          <div className="flex flex-col gap-6 items-center md:items-start">
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5">
+              <span className="text-sm font-medium text-gray-700">
+                Waitlist Now Open
               </span>
             </div>
             <div className="flex flex-col items-center md:items-start gap-1 mt-4">
@@ -61,9 +51,9 @@ const HomeHero = () => {
             </div>
             <Typography
               variant="h4"
-              className="text-dark-700 mt-3 leading-8 max-w-lg font-normal"
+              className="text-gray-600 mt-3 leading-8 max-w-lg font-normal"
             >
-              The AI-powered lost & found that actually works. Report once, and
+              The lost & found platform that actually works. Report once, and
               we&apos;ll search everywhere for you in real time.
             </Typography>
             <Form {...form}>
@@ -94,20 +84,20 @@ const HomeHero = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="h-12 px-6 font-bold rounded-xl bg-primary-700 hover:bg-dark-400 shadow-lg shadow-primary-200"
+                  className="h-12 px-6 font-semibold rounded-lg bg-primary-600 hover:bg-primary-700"
                 >
-                  Join →
+                  Join waitlist
                 </Button>
               </form>
             </Form>
-            <Typography variant="smallText" className="">
-              See how it works →
-            </Typography>
+            <Link href="#how-it-works" className="text-sm text-primary-600 hover:text-primary-700 transition-colors mt-2">
+              Learn more →
+            </Link>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center mt-2">
               <div className="flex flex-row gap-2 items-center">
                 <CheckCircleIcon className="text-primary-600" />
-                <Typography variant="smallText">AI-powered matching</Typography>
+                <Typography variant="smallText">Smart matching</Typography>
               </div>
               <div className="flex flex-row gap-2 items-center">
                 <CheckCircleIcon className="text-primary-600" />
@@ -117,20 +107,16 @@ const HomeHero = () => {
               </div>
             </div>
           </div>
-        </motion.div>
-        <div className="basis-full md:basis-[1/2] ">
-          <motion.img
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            exit={{ scale: 0 }}
-            transition={transition1}
+        </div>
+        <div className="basis-full md:basis-[1/2]">
+          <img
             src="/images/hero.png"
-            alt="renuir image"
-            className="max-w-120"
+            alt="Renuir platform illustration"
+            className="max-w-full"
           />
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

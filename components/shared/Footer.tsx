@@ -12,9 +12,10 @@ export const Footer = () => {
             <div className="flex items-center gap-2 mb-4 text-white font-semibold">
               <Image
                 src={Logo}
-                alt="Accelerate Africa's Logo"
-                width={120}
-                className="w-27.5 sm:w-40"
+                alt="Renuir Logo"
+                width={90}
+                height={90}
+                className="w-[70px] sm:w-[90px] h-auto"
               />
             </div>
 
@@ -27,18 +28,27 @@ export const Footer = () => {
 
             <div className="mt-6 text-sm space-y-1">
               <p>Renuir Inc.</p>
-              <p>123 Innovation Drive, Suite 400</p>
-              <p>San Francisco, CA 94105, USA</p>
-              <p className="mt-3">Email: contact@renuir.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
+              <p className="mt-3">
+                <Link href="mailto:contact@renuir.com" className="hover:text-white transition-colors">
+                  contact@renuir.com
+                </Link>
+              </p>
             </div>
 
             {/* Socials */}
             <div className="flex items-center gap-4 mt-6 text-gray-300">
-              <Twitter className="h-4 w-4 cursor-pointer hover:text-white" />
-              <Linkedin className="h-4 w-4 cursor-pointer hover:text-white" />
-              <Instagram className="h-4 w-4 cursor-pointer hover:text-white" />
-              <Facebook className="h-4 w-4 cursor-pointer hover:text-white" />
+              <Link href="https://twitter.com/renuir" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <Twitter className="h-4 w-4 cursor-pointer hover:text-white transition-colors" />
+              </Link>
+              <Link href="https://linkedin.com/company/renuir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <Linkedin className="h-4 w-4 cursor-pointer hover:text-white transition-colors" />
+              </Link>
+              <Link href="https://instagram.com/renuir" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="h-4 w-4 cursor-pointer hover:text-white transition-colors" />
+              </Link>
+              <Link href="https://facebook.com/renuir" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="h-4 w-4 cursor-pointer hover:text-white transition-colors" />
+              </Link>
             </div>
           </div>
 
@@ -46,19 +56,19 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4">Navigation</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/">Home</Link>
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="#features">Features</Link>
+                <Link href="#features" className="hover:text-white transition-colors">Features</Link>
               </li>
               <li>
-                <Link href="#how-it-works">How it Works</Link>
+                <Link href="#how-it-works" className="hover:text-white transition-colors">How it Works</Link>
               </li>
               <li>
-                <Link href="#about">About Us</Link>
+                <Link href="#about" className="hover:text-white transition-colors">About</Link>
               </li>
               <li>
-                <Link href="#waitlist">Join Waitlist</Link>
+                <Link href="#waitlist" className="hover:text-white transition-colors">Join Waitlist</Link>
               </li>
             </ul>
           </div>
@@ -67,19 +77,16 @@ export const Footer = () => {
             <h4 className="text-white font-medium mb-4">Support</h4>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/#faq">Help Center</Link>
+                <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
               </li>
               <li>
-                <Link href="/#faq">FAQ</Link>
+                <Link href="mailto:support@renuir.com" className="hover:text-white transition-colors">Contact Support</Link>
               </li>
               <li>
-                <Link href="mailto:support@renuir.com">Contact Support</Link>
+                <Link href="/safety" className="hover:text-white transition-colors">Safety Tips</Link>
               </li>
               <li>
-                <Link href="/safety">Safety Tips</Link>
-              </li>
-              <li>
-                <Link href="/partner">Partner with Us</Link>
+                <Link href="/partner" className="hover:text-white transition-colors">Partner with Us</Link>
               </li>
             </ul>
           </div>

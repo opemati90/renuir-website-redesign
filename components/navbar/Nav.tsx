@@ -16,14 +16,15 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white fixed w-full z-99 border-b border-primary-50">
+    <nav className="bg-white fixed w-full z-50 border-b border-gray-200">
       <div className="app-container flex justify-between items-center py-2">
         <Link href="/">
           <Image
             src={Logo}
-            alt="Accelerate Africa's Logo"
-            width={120}
-            className="w-27.5 sm:w-60"
+            alt="Renuir Logo"
+            width={90}
+            height={90}
+            className="w-[70px] sm:w-[90px] h-auto"
           />
         </Link>
 
@@ -43,7 +44,7 @@ const Nav = () => {
               </Link>
             </div>
           ))}
-          <Link href="/login" className="hidden lg:block">
+          <Link href="#waitlist" className="hidden lg:block">
             <Button variant="default">Join waitlist</Button>
           </Link>
         </div>

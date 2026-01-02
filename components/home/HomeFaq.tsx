@@ -1,4 +1,3 @@
-"use client";
 import {
   Accordion,
   AccordionContent,
@@ -7,26 +6,18 @@ import {
 } from "@/components/ui/accordion";
 import { Typography } from "@/components/ui/typography";
 import { faqs } from "../utils/data/homeItems";
-import { motion } from "framer-motion";
-import { fadeIn } from "../Variants";
 
 export const FAQSection = () => {
   return (
-    <motion.section className="py-12 ">
-      <motion.div
-        variants={fadeIn("down", "tween", 0.2, 0.8)}
-        initial="hidden"
-        whileInView={"show"}
-        exit={"show"}
-        className="app-container max-w-3xl py-12"
-      >
-        <Typography variant="h1" className="text-center font-bold ">
+    <section id="faq" className="py-12">
+      <div className="app-container max-w-3xl py-12">
+        <Typography variant="h1" className="text-center font-semibold">
           Questions? We&apos;ve got answers.
         </Typography>
 
         <Typography
           variant="lead"
-          className="text-center text-dark-500  font-semibold mt-2 "
+          className="text-center text-gray-600 font-normal mt-2"
         >
           Here&apos;s what people usually want to know.
         </Typography>
@@ -41,19 +32,19 @@ export const FAQSection = () => {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="rounded-2xl border border-gray-200 px-6 py-2"
+              className="rounded-lg border border-gray-200 px-6 py-2"
             >
-              <AccordionTrigger className="text-left text-lg font-bold text-dark-700 hover:no-underline data-[state=open]:text-primary-600">
+              <AccordionTrigger className="text-left text-base font-semibold text-gray-900 hover:no-underline data-[state=open]:text-primary-600">
                 {faq.question}
               </AccordionTrigger>
 
-              <AccordionContent className="text-dark-800 text-lg leading-relaxed ">
+              <AccordionContent className="text-gray-700 text-base leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };

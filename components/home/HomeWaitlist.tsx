@@ -16,8 +16,6 @@ import { Button } from "@/components/ui/button";
 import { Typography } from "@/components/ui/typography";
 
 import { Mail } from "lucide-react";
-import { motion } from "framer-motion";
-import { fadeIn } from "../Variants";
 
 const formSchema = z.object({
   email: z.string().email("Please enter a valid email"),
@@ -36,18 +34,10 @@ export const EarlyAccessSection = () => {
   };
 
   return (
-    <motion.section className="bg-primary-10 py-24 md:py-48">
-      <motion.div
-        variants={fadeIn("down", "tween", 0.2, 0.8)}
-        initial="hidden"
-        whileInView={"show"}
-        exit={"show"}
-        className="app-container max-w-3xl text-center"
-      >
-        <div className="inline-flex items-center bg-primary-100 rounded-full  px-3 py-2">
-          <div className="h-2.5 w-2.5 rounded-full animate-[pulse-primary_1.2s_ease-in-out_infinite]" />
-
-          <span className="ml-2 text-sm font-medium text-primary-700">
+    <section id="waitlist" className="bg-gray-50 py-24 md:py-32">
+      <div className="app-container max-w-3xl text-center">
+        <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1.5">
+          <span className="text-sm font-medium text-gray-700">
             Launching soon
           </span>
         </div>
@@ -87,29 +77,17 @@ export const EarlyAccessSection = () => {
             <Button
               type="submit"
               size="lg"
-              className="h-12 px-6 rounded-xl bg-black hover:bg-dark-400"
+              className="h-12 px-6 rounded-lg bg-gray-900 hover:bg-gray-800"
             >
-              Join waitlist →
+              Join waitlist
             </Button>
           </form>
         </Form>
 
-        <p className="mt-4 text-sm text-dark-600 font-medium">
+        <p className="mt-4 text-sm text-gray-500">
           No spam. Unsubscribe anytime.
         </p>
-
-        {/* <div className="mt-8 flex items-center justify-center gap-3 text-sm text-dark-400">
-          <div className="flex -space-x-2">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="h-8 w-8 rounded-full bg-gray-200 border border-white"
-              />
-            ))}
-          </div>
-          <span>Join 10,000+ others on the waitlist</span>
-        </div> */}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 };

@@ -10,14 +10,12 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import Logo from "@/public/images/Renuirlogo-1.svg";
 import { Button } from "@/components/ui/button";
 import { clsx } from "clsx";
 import { useEffect, useState } from "react";
 import { menuItems } from "../utils/data/menuItems";
-import { Typography } from "@/components/ui/typography"; // ✅ ADD THIS
+import { Typography } from "@/components/ui/typography";
 
 const MobileNav = () => {
   const [isSheetOpen, setSheetOpen] = useState(false);
@@ -36,19 +34,15 @@ const MobileNav = () => {
           </button>
         </SheetTrigger>
 
-        <SheetContent side="top" className="w-full rounded-xl">
+        <SheetContent side="top" className="w-full">
           <SheetHeader className="text-left">
-            <SheetTitle className="mt-8 mb-12 flex flex-wrap justify-between items-end">
-              <Link href="/">
-                <Image src={Logo} alt="Accelerate Africa's Logo" width={110} />
-              </Link>
-
-              <Link href="/login" className="mt-4">
-                <Button variant="outline">Join waitlist</Button>
+            <SheetTitle className="mt-6 mb-8 flex flex-wrap justify-end">
+              <Link href="#waitlist">
+                <Button variant="outline" size="sm">Join waitlist</Button>
               </Link>
             </SheetTitle>
 
-            <div className="flex flex-col space-y-5 pb-5">
+            <div className="flex flex-col space-y-4 pb-6">
               {menuItems.map((item) => (
                 <div key={item.name}>
                   <Link href={item.href}>

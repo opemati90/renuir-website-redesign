@@ -4,28 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-primary-10: #f8f9fa;
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
   --color-primary-500: #3b82f6;
   --color-primary-600: #2563eb;
   --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
-  --color-dark-50: #fafafa;
-  --color-dark-100: #f4f4f5;
-  --color-dark-200: #e4e4e7;
-  --color-dark-300: #d4d4d8;
-  --color-dark-400: #a1a1aa;
-  --color-dark-500: #71717a;
-  --color-dark-600: #52525b;
-  --color-dark-700: #3f3f46;
-  --color-dark-800: #27272a;
-  --color-dark-900: #18181b;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -158,15 +141,5 @@
     padding-inline: 1.25rem;
     width: 100%;
     max-width: 1080px; /* 👈 adjust freely */
-  }
-}
-
-@keyframes pulse-primary {
-  0%,
-  100% {
-    background-color: var(--color-primary-700);
-  }
-  50% {
-    background-color: var(--color-primary-300);
   }
 }
