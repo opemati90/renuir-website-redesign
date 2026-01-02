@@ -22,6 +22,7 @@ export const Loststat = [
   },
   {
     icon: Sparkle,
+
     value: "We search",
     label: "AI checks and matches in real time",
     bg: "bg-white",
@@ -30,6 +31,7 @@ export const Loststat = [
   },
   {
     icon: BoxIcon,
+
     value: "Get it back",
     label: "Pick up or have it shipped",
     bg: "bg-white",
@@ -118,57 +120,57 @@ export const trustedByStats = [
   {
     icon: Smartphone,
     value: "One report",
-    label: "SEARCH EVERYWHERE",
-    bg: "bg-transparent",
-    iconColor: "text-gray-400",
+    label: "Search everywhere",
+    bg: "bg-primary-50",
+    iconColor: "text-primary-600",
   },
   {
     icon: Clock,
     value: "Always on",
-    label: "ACTIVE 24/7 SEARCH",
-    bg: "bg-transparent",
-    iconColor: "text-gray-400",
+    label: "We search 24/7",
+    bg: "bg-orange-50",
+    iconColor: "text-orange-500",
   },
   {
     icon: ShieldCheck,
-    value: "Secure",
-    label: "PRIVACY-FIRST PLATFORM",
-    bg: "bg-transparent",
-    iconColor: "text-gray-400",
+    value: "Private",
+    label: "Your info stays safe",
+    bg: "bg-green-50",
+    iconColor: "text-green-600",
   },
   {
     icon: Heart,
     value: "Free",
-    label: "FOR ALL INDIVIDUALS",
-    bg: "bg-transparent",
-    iconColor: "text-gray-400",
+    label: "for individuals",
+    bg: "bg-purple-50",
+    iconColor: "text-purple-600",
   },
 ];
 
 export const businessFeatures = [
   {
     icon: Zap,
-    title: "Instant logging",
+    title: "Log items in seconds",
     description:
-      "Capture items in seconds with automated categorization. Ditch the spreadsheets for good.",
+      "Staff snap a photo, we handle the rest. No more spreadsheets or handwritten logs.",
   },
   {
     icon: BarChart3,
-    title: "Insightful analytics",
+    title: "See what gets lost",
     description:
-      "Track item volume, recovery rates, and storage duration with professional reporting tools.",
+      "Know which items pile up, where they come from, and how long they sit unclaimed.",
   },
   {
     icon: RefreshCw,
-    title: "Automated matching",
+    title: "Automatic matching",
     description:
-      "Our system instantly cross-references reports to find matches before you even look.",
+      "When someone reports a lost item, we check your inventory instantly. You just confirm the match.",
   },
   {
     icon: ShieldCheck,
-    title: "Secure handoffs",
+    title: "Safe handoffs",
     description:
-      "Verified owner identification and integrated shipping options for a professional service.",
+      "Verify the owner's identity before returning anything. Simple pickup or shipping options built in.",
   },
 ];
 
