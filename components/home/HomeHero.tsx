@@ -183,9 +183,10 @@ const HomeHero = () => {
             className="flex-1 w-full lg:w-auto"
           >
             <img
-              src="/images/Hero_img.png"
+              src="/images/Hero-img.png"
               alt="Renuir platform illustration"
-              className="w-full max-w-2xl mx-auto"
+              className="w-full max-w-2xl mx-auto h-auto object-contain"
+              style={{ aspectRatio: '4578/3433' }}
             />
           </motion.div>
         </div>
