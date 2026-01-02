@@ -10,7 +10,7 @@ import { faqs } from "../utils/data/homeItems";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { fadeIn } from "../Variants";
-import { HelpCircle, ArrowRight } from "lucide-react";
+import { HelpCircle, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const FAQSection = () => {
   const ref = useRef(null);
@@ -87,13 +87,26 @@ export const FAQSection = () => {
           <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-64 h-64 bg-primary-600/20 rounded-full blur-3xl pointer-events-none" />
           
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="flex-1 text-center md:text-left space-y-4">
-              <Typography variant="h3" className="text-3xl md:text-4xl font-black tracking-tight leading-tight">
+            <div className="flex-1 text-center md:text-left space-y-6">
+              <Typography variant="h3" className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
                 More than just an automated platform.
               </Typography>
               <p className="text-gray-400 text-lg md:text-xl max-w-xl leading-relaxed">
                 Our dedicated support team is here to ensure every lost item has the best chance of finding its way back home.
               </p>
+              
+              <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 pt-2">
+                {[
+                  "Retrieval assistance",
+                  "Shipping coordination",
+                  "Match verification"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-gray-300 font-bold text-sm uppercase tracking-wider">
+                    <CheckCircle2 className="w-5 h-5 text-primary-500" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             
             <div className="flex flex-col items-center md:items-end gap-4 min-w-fit">
