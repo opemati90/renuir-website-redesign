@@ -10,7 +10,7 @@ import React from "react";
 import Link from "next/link";
 import { Typography } from "../ui/typography";
 import { Button } from "../ui/button";
-import { CheckCircleIcon, Mail, ArrowRight } from "lucide-react";
+import { CheckCircleIcon, Mail, ArrowRight, Sparkles } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,27 +36,28 @@ const HomeHero = () => {
   };
 
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
   return (
-    <section className="bg-white pt-24 md:pt-32 pb-20 md:pb-24">
+    <section className="bg-white pt-20 md:pt-28 pb-16 md:pb-24">
       <div ref={containerRef} className="app-container">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
-            variants={fadeIn("up", "tween", 0.2, 0.5)}
-            className="flex-1 lg:flex-[0.45] space-y-6"
+            variants={fadeIn("up", "tween", 0, 0.6)}
+            className="space-y-8"
           >
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ delay: 0.1, duration: 0.4 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100"
             >
-              <span className="text-sm font-medium text-gray-700">
+              <Sparkles className="h-4 w-4 text-primary-600" />
+              <span className="text-sm font-semibold text-primary-700">
                 Join the waitlist
               </span>
             </motion.div>
@@ -66,11 +67,11 @@ const HomeHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="space-y-2"
+              className="space-y-4"
             >
               <Typography
                 variant="h1"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight"
               >
                 Lost it?
                 <br />
@@ -86,7 +87,7 @@ const HomeHero = () => {
             >
               <Typography
                 variant="h4"
-                className="text-lg text-gray-600 leading-relaxed max-w-xl"
+                className="text-xl md:text-2xl text-gray-600 leading-relaxed font-normal"
               >
                 The lost & found platform that actually works. Report once, and
                 we&apos;ll search everywhere for you in real time.
@@ -98,12 +99,12 @@ const HomeHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.4, duration: 0.5 }}
-              className="pt-2"
+              className="pt-4"
             >
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
-                  className="flex flex-col sm:flex-row gap-3 max-w-xl"
+                  className="flex flex-col sm:flex-row gap-3 max-w-2xl"
                 >
                   <FormField
                     control={form.control}
@@ -112,11 +113,11 @@ const HomeHero = () => {
                       <FormItem className="flex-1">
                         <FormControl>
                           <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
+                            <Mail className="absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
                             <Input
                               {...field}
                               placeholder="Enter your email"
-                              className="pl-12 h-12 text-base rounded-lg border border-gray-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500"
+                              className="pl-14 h-14 text-base rounded-xl border-2 border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 bg-white shadow-sm"
                             />
                           </div>
                         </FormControl>
@@ -128,10 +129,10 @@ const HomeHero = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="h-12 px-6 font-semibold rounded-lg bg-primary-600 hover:bg-primary-700 text-white"
+                    className="h-14 px-8 font-semibold rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300"
                   >
                     Join waitlist
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </form>
               </Form>
@@ -142,17 +143,21 @@ const HomeHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="flex flex-wrap items-center gap-6 pt-2"
+              className="flex flex-wrap items-center gap-8 pt-4"
             >
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-                <Typography variant="smallText" className="text-gray-700">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-primary-100">
+                  <CheckCircleIcon className="h-5 w-5 text-primary-600" />
+                </div>
+                <Typography variant="smallText" className="text-gray-700 font-medium text-base">
                   Smart matching
                 </Typography>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircleIcon className="h-5 w-5 text-primary-600 flex-shrink-0" />
-                <Typography variant="smallText" className="text-gray-700">
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-primary-100">
+                  <CheckCircleIcon className="h-5 w-5 text-primary-600" />
+                </div>
+                <Typography variant="smallText" className="text-gray-700 font-medium text-base">
                   Free for individuals
                 </Typography>
               </div>
@@ -167,27 +172,29 @@ const HomeHero = () => {
             >
               <Link
                 href="/#how-it-works"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                className="inline-flex items-center gap-2 text-base font-semibold text-primary-600 hover:text-primary-700 transition-colors group"
               >
                 Learn how it works
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </motion.div>
           </motion.div>
 
-          {/* Right Image - Simple, no effects */}
+          {/* Right Image */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center min-h-[400px]"
+            className="flex items-center justify-center w-full lg:w-auto"
           >
-            <img
-              src="/images/Hero-img.png"
-              alt="Renuir platform illustration"
-              className="w-full h-auto object-contain max-w-full"
-              style={{ aspectRatio: '1564/3195' }}
-            />
+            <div className="relative w-full max-w-lg mx-auto">
+              <img
+                src="/images/hero-img.png"
+                alt="Renuir platform illustration"
+                className="w-full h-auto object-contain"
+                style={{ aspectRatio: '1173/2397' }}
+              />
+            </div>
           </motion.div>
         </div>
       </div>
