@@ -16,7 +16,7 @@ export const LostSomething = () => {
   return (
     <section
       id="how-it-works"
-      className="bg-white py-10 md:py-12 overflow-hidden"
+      className="bg-white py-16 md:py-24 overflow-hidden"
     >
       <div ref={ref} className="app-container">
         {/* Header */}

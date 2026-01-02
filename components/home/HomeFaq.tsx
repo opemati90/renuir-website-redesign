@@ -17,7 +17,7 @@ export const FAQSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="faq" className="bg-white py-10 md:py-12">
+    <section id="faq" className="bg-white py-16 md:py-24">
       <motion.div
         ref={ref}
         initial="hidden"

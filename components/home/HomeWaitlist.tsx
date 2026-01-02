@@ -40,7 +40,7 @@ export const EarlyAccessSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="waitlist" className="bg-gray-50 py-10 md:py-12">
+    <section id="waitlist" className="bg-gray-50 py-16 md:py-24">
       <motion.div
         ref={ref}
         initial="hidden"

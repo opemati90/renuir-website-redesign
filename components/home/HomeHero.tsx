@@ -39,15 +39,15 @@ const HomeHero = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
 
   return (
-    <section className="bg-white pt-4 md:pt-6 pb-8 md:pb-10 overflow-hidden">
+    <section className="bg-white pt-2 md:pt-4 pb-16 md:pb-24 overflow-hidden">
       <div ref={containerRef} className="app-container">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0.1, 0.6)}
-            className="flex-1 lg:flex-[0.35] space-y-10"
+            className="flex-1 lg:flex-[0.3] space-y-10"
           >
             {/* Badge */}
             <motion.div
@@ -185,7 +185,7 @@ const HomeHero = () => {
             initial={{ opacity: 0, scale: 0.9, x: 20 }}
             animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.9, x: 20 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="flex-1 lg:flex-[0.65] w-full flex items-center justify-center"
+            className="flex-1 lg:flex-[0.7] w-full flex items-center justify-center"
           >
             <div className="relative w-full max-w-2xl mx-auto">
               {/* Subtle backdrop highlight */}

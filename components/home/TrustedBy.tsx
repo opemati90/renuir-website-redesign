@@ -10,7 +10,7 @@ export const TrustedByStats = () => {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section className="bg-white border-y border-gray-100 py-12 md:py-16">
+    <section className="bg-white border-y border-gray-100 py-8 md:py-12">
       <div ref={ref} className="app-container">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-x-0 lg:divide-x divide-gray-100">
           {trustedByStats.map((stat, index) => (
