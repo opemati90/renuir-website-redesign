@@ -47,7 +47,7 @@ export const FloatingWaitlist = () => {
           </p>
           
           <div className="flex items-center gap-3">
-            <Link href="#waitlist">
+            <Link href="/#waitlist">
               <Button
                 size="sm"
                 className="bg-white text-primary-600 hover:bg-gray-100 font-semibold rounded-lg px-6 h-10"

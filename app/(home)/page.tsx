@@ -5,7 +5,6 @@ import { EarlyAccessSection } from "@/components/home/HomeWaitlist";
 import { LostSomething } from "@/components/home/HowitWorks";
 
 import { TailoredForEveryone } from "@/components/home/TailoredFor";
-import { TrustedByStats } from "@/components/home/TrustedBy";
 
 const SECTIONS = [
   { Component: HomeHero, className: "" },
