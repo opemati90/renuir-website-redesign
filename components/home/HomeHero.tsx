@@ -41,13 +41,13 @@ const HomeHero = () => {
   return (
     <section className="bg-white pt-24 md:pt-32 pb-20 md:pb-24">
       <div ref={containerRef} className="app-container">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
             animate={isInView ? "show" : "hidden"}
             variants={fadeIn("up", "tween", 0.2, 0.5)}
-            className="flex-1 space-y-6"
+            className="flex-1 lg:flex-[0.45] space-y-6"
           >
             {/* Badge */}
             <motion.div
@@ -180,12 +180,12 @@ const HomeHero = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex-1 w-full lg:w-auto flex items-center justify-center"
+            className="flex-1 lg:flex-[0.55] w-full flex items-center justify-center"
           >
             <img
               src="/images/Hero-img.png"
               alt="Renuir platform illustration"
-              className="w-full max-w-5xl mx-auto h-auto object-contain"
+              className="w-full max-w-none lg:max-w-[90%] xl:max-w-full h-auto object-contain scale-110 lg:scale-100"
               style={{ aspectRatio: '4578/3433' }}
             />
           </motion.div>
