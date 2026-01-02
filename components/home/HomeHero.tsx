@@ -185,8 +185,8 @@ const HomeHero = () => {
             <img
               src="/images/Hero-img.png"
               alt="Renuir platform illustration"
-              className="w-full h-auto object-contain scale-200 lg:scale-200"
-              style={{ aspectRatio: '4578/3433', transform: 'scale(2)' }}
+              className="w-full h-auto object-contain"
+              style={{ aspectRatio: '4578/3433', transform: 'scale(2)', transformOrigin: 'center' }}
             />
           </motion.div>
         </div>
