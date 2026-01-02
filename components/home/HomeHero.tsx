@@ -180,12 +180,12 @@ const HomeHero = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex-1 w-full lg:w-auto"
+            className="flex-1 w-full lg:w-auto flex items-center justify-center"
           >
             <img
               src="/images/Hero-img.png"
               alt="Renuir platform illustration"
-              className="w-full max-w-2xl mx-auto h-auto object-contain"
+              className="w-full max-w-5xl mx-auto h-auto object-contain"
               style={{ aspectRatio: '4578/3433' }}
             />
           </motion.div>
